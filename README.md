@@ -32,10 +32,10 @@ BBC News Content Collect and Store
     * This script provides implementation of search REST API, for News Crawler.
     * Implemented search APIs gets the required data from Mongo Database and display to end user.
     * Three search APIs are implemented, which are:
-     1. For fetching all the news articles in Mongo Database.
+      1. For fetching all the news articles in Mongo Database.
          * (Example API Call: ```<ROOT URL>/news ```)
-     2. For fetching news articles from Mongo Database, with a given keyword in News Text. 
+      2. For fetching news articles from Mongo Database, with a given keyword in News Text. 
          * (Example API Call: ```<ROOT URL>/newsText/<string:keyword>``` like: "http://127.0.0.1:5000/newsText/Tension") 
-     3. For fetching news articles from Mongo Database, with a given keyword in News Headline. 
+      3. For fetching news articles from Mongo Database, with a given keyword in News Headline. 
          * (Example API Call: ```<ROOT URL>/newsHeadline/<string:keyword>``` like: "http://127.0.0.1:5000/newsHeadline/BBC" 
            or "http://127.0.0.1:5000/newsHeadline/BBC News") 
