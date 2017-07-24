@@ -1,0 +1,17 @@
+{
+	"allowed_domains" : ["bbc.com"],
+	"start_urls": [
+		"http://www.bbc.com/"
+	],
+	"rules": [
+		{
+			"allow": ["http://www.bbc.com/*"],
+			"follow": true,
+			"callback": "parseItems"
+		}
+	],
+	"paths": {
+		"title" : ["//title/text()"],
+        "author": ["//meta[@property='article:author']/@content", "//meta[@name='author']/@content"]
+	}
+}

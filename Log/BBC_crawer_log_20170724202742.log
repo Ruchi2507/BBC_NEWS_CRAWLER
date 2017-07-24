@@ -1,0 +1,1032 @@
+2017-07-24 20:27:43 [scrapy.utils.log] INFO: Scrapy 1.4.0 started (bot: news_crawler)
+2017-07-24 20:27:43 [scrapy.utils.log] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'news_crawler.spiders', 'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['news_crawler.spiders'], 'LOG_FILE': 'Log/BBC_crawer_log_20170724202742.log', 'BOT_NAME': 'news_crawler'}
+2017-07-24 20:27:43 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2017-07-24 20:27:44 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2017-07-24 20:27:44 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2017-07-24 20:27:50 [scrapy.middleware] INFO: Enabled item pipelines:
+['news_crawler.pipelines.NewsCrawlerPipeline',
+ 'news_crawler.pipelines.NewsTextPipeline',
+ 'news_crawler.pipelines.NewsCountriesMentionPipeline',
+ 'news_crawler.pipelines.DropIfEmptyPipeline',
+ 'news_crawler.pipelines.DuplicatesPipeline',
+ 'news_crawler.pipelines.MongoDBPipeline',
+ 'news_crawler.pipelines.JsonExportPipeline']
+2017-07-24 20:27:50 [scrapy.core.engine] INFO: Spider opened
+2017-07-24 20:27:50 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2017-07-24 20:27:50 [scrapy.extensions.telnet] DEBUG: Telnet console listening on 127.0.0.1:6023
+2017-07-24 20:27:51 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.bbc.com/robots.txt> (referer: None)
+2017-07-24 20:27:51 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.bbc.com/> (referer: None)
+2017-07-24 20:27:52 [scrapy.dupefilters] DEBUG: Filtered duplicate request: <GET http://www.bbc.com/#orb-footer> - no more duplicates will be shown (see DUPEFILTER_DEBUG to show all duplicates)
+2017-07-24 20:27:52 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.bbc.com/> (referer: http://www.bbc.com/)
+2017-07-24 20:27:52 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.bbc.com/news/world-asia-india-40657074> (referer: http://www.bbc.com/)
+2017-07-24 20:27:52 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.bbc.com/news/world-asia-india-40697972> (referer: http://www.bbc.com/)
+2017-07-24 20:27:53 [root] INFO: Parsing URL: http://www.bbc.com/news/world-asia-india-40657074
+2017-07-24 20:27:53 [requests.packages.urllib3.connectionpool] INFO: Starting new HTTP connection (1): www.bbc.com
+2017-07-24 20:27:53 [requests.packages.urllib3.connectionpool] DEBUG: "GET /news/world-asia-india-40657074 HTTP/1.1" 200 38631
+2017-07-24 20:27:54 [py.warnings] WARNING: c:\python27\lib\site-packages\readability\htmls.py:117: FutureWarning: The behavior of this method will change in future versions. Use specific 'len(elem)' or 'elem is not None' test instead.
+  raw_html = str_(tostring(doc.body or doc))
+
+2017-07-24 20:27:54 [readability.readability] DEBUG: Removing unlikely candidate - header#orb-banner>#orb-header.orb-nav-pri.orb-nav-pri-white.b-header--white--black.orb-nav-empty
+2017-07-24 20:27:54 [readability.readability] DEBUG: Branch 129.000 .column--primary>.story-body link density 0.083 -> 118.348
+2017-07-24 20:27:54 [readability.readability] DEBUG: Branch  6.500 .container--primary-and-secondary-columns.column-clearfix>.column--primary link density 0.090 ->  5.915
+2017-07-24 20:27:54 [readability.readability] DEBUG: Branch  7.000 li.twite>.twite__panel.arrow-top link density 0.666 ->  2.338
+2017-07-24 20:27:54 [readability.readability] DEBUG: Branch -2.000 ul.sharetools>li.twite link density 0.668 -> -0.664
+2017-07-24 20:27:54 [readability.readability] DEBUG: Branch 222.000 .story-body>.story-body__inner link density 0.034 -> 214.449
+2017-07-24 20:27:54 [readability.readability] DEBUG: Branch  4.000 #comp-top-stories-promo.top-stories-promo>a.top-stories-promo-story link density 0.000 ->  4.000
+2017-07-24 20:27:54 [readability.readability] DEBUG: Branch -43.000 .column--secondary>#comp-top-stories-promo.top-stories-promo link density 0.949 -> -2.181
+2017-07-24 20:27:54 [readability.readability] INFO: Top 5 : 214.449 .story-body>.story-body__inner
+2017-07-24 20:27:54 [readability.readability] INFO: Top 5 : 118.348 .column--primary>.story-body
+2017-07-24 20:27:54 [readability.readability] INFO: Top 5 :  5.915 .container--primary-and-secondary-columns.column-clearfix>.column--primary
+2017-07-24 20:27:54 [readability.readability] INFO: Top 5 :  4.000 #comp-top-stories-promo.top-stories-promo>a.top-stories-promo-story
+2017-07-24 20:27:54 [readability.readability] INFO: Top 5 :  2.338 li.twite>.twite__panel.arrow-top
+2017-07-24 20:27:54 [readability.readability] DEBUG: Not removing .story-body__inner>ul.story-body__unordered-list of length 152: InVid has developed a browser applicatio...
+2017-07-24 20:27:54 [readability.readability] DEBUG: Not removing .story-body__inner>ul.story-body__unordered-list of length 146: The free video to jpg converter transfor...
+2017-07-24 20:27:54 [readability.readability] DEBUG: Not removing .story-body__inner>ul.story-body__unordered-list of length 68: Tineye also allows readers to check if i...
+2017-07-24 20:27:54 [readability.readability] DEBUG: Not removing .story-body__inner>ul.story-body__unordered-list of length 293: Google reverse image search is favoured ...
+2017-07-24 20:27:54 [readability.readability] DEBUG: Removed 214.449 .story-body__inner>ul.story-body__unordered-list with weight 25 cause it has too many links 0.987 for its weight 25.
+2017-07-24 20:27:54 [readability.readability] DEBUG: Removed 214.449 .story-body__inner>#bbccom_mpu_1_2_3.bbccom_slot.mpu-ad with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:27:54 [requests.packages.urllib3.connectionpool] INFO: Starting new HTTP connection (1): www.bbc.com
+2017-07-24 20:27:54 [requests.packages.urllib3.connectionpool] DEBUG: "GET /news/world-asia-india-40657074 HTTP/1.1" 200 38631
+2017-07-24 20:28:00 [root] INFO: News Article inserted to MongoDB database!
+2017-07-24 20:28:00 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.bbc.com/news/world-asia-india-40657074>
+{'author': 'https://www.facebook.com/bbcnews',
+ 'countriesMentioned': ['British Indian Ocean Territory', 'Pakistan'],
+ 'newsHeadline': 'The people trying to fight fake news in India - BBC News',
+ 'newsText': u'![An Indian shopkeeper uses his cellphone to watch a live broadcast by Prime Minister Narendra Modi in Allahabad on December 31, 2016.](https://ichef-1.bbci.co.uk/news/320/cpsprodpb/32E6/production/_97003031_gettyimages-630719064.jpg) Image copyright AFP Image caption For a majority of Indians, their first point of exposure to the internet is via their phone  Earlier this year, mobs in the eastern Indian state of Jharkhand beat seven people to death in two separate incidents that horrified the country.  After the dust had settled, it transpired that the victims had been mistaken for child traffickers.  The trigger was a WhatsApp message that had gone viral, urging people to be careful of strangers as they most likely belonged to a "child lifting gang".  As the message passed on, police say hysteria increased. Villagers armed themselves and began attacking anyone they did not recognise, with tragic results.  Unlike in western countries, most of India\'s fake news spreads via WhatsApp and mobile phone messages, because for a majority of Indians, their first point of exposure to the internet is via their phone.  India\'s telecom regulatory commission says there are more than one billion active mobile phone connections in India, and millions of Indians have started getting online in a very short space of time.  "Reach has exploded, thanks to the proliferation of smartphones and cheap data packages. Rumours spread further and faster," Pratik Sinha, the founder of Altnews.in told the BBC. `  "Suddenly people from rural areas in particular are inundated with information and are unable to distinguish what is real from what is not. They tend to believe whatever is sent to them."  Mr Sinha is one of a handful of people trying to "fight" the scourge of fake news in India.  Formerly a software engineer, he now runs Altnews fulltime, funding it with his own savings and ad revenue.  Image copyright Pratik Sinha  Altnews fact checks viral stories circulating on social media and WhatsApp, verifies photographs and videos and also calls out stories by media organisations that may be based on fake news.  Stories he has debunked include a viral video claiming to show a Hindu girl being lynched by a Muslim mob. The video, Mr Sinha says, regularly does the rounds on WhatsApp with a plea to the receiver to send on the message with the hope that authorities will be pressurised into taking action.  But the video though horrific, is actually of a Guatemalan girl being beaten by a mob and is two years old.  In fact a majority of the videos, Mr Sinha has said, seem to be propagated by people with hardline sensibilities and many have an "anti-Muslim" slant.  * * *  ## Some tools to be a myth buster  Image copyright AFP Image caption The encryption technology used by WhatsApp makes it hard to track fake news propagated on the site    * Google reverse image search is favoured by all of the Indian myth-busters. It allows you to upload an image online and then search for where it may have appeared in the past. You can either go to Google and do an image search or add the Google Search Image extension on to your Chrome browser.    * Tineye also allows readers to check if images have been manipulated.    * The free video to jpg converter transforms video into images that can then be searched separately. This can also be installed as a browser add-on.    * InVid has developed a browser application that allows people to add video links into it. It then provides detailed analysis about the video in question.  * * *  Part of the challenge, he adds, is that WhatsApp, which is the main medium of fake news in India, is "like a mutating virus".  "WhatsApp has end to end encryption. What that means is every message sent between two parties has a unique set of keys, regardless of whether it is the same message being passed on. This means that when fake news happens, there is no trail. It becomes tough for even WhatsApp to track."  The other issue, according to Durga Raghunath, an Indian digital expert, is that people don\'t question sources on social networks or messaging apps.  "The mental approach is different. Many of the issues people see on these platforms have an emotional connect, and because the information comes to us via family and friends, the inclination to double check is very low," she told the BBC.  Pankaj Jain, the man behind verification site SM Hoax slayer, knows this better than most. He told the BBC that his inspiration to bust hoaxes were the "stupid rumours" he kept receiving on WhatsApp.  Image copyright Pankaj Jain Image caption Pankaj Jain said he started his site because of the "stupid rumours" he kept getting  "I began by responding to messages to tell people what they were passing on was not true, and then decided to take it further."  He came to prominence after becoming one of the first people to shoot down a viral news story which claimed that India\'s new 2,000 rupee note was embedded with a "nano GPS chip" that allowed authorities to track it if it was taken outside the country.  "I did a lot of research and the thing that jumped out at me the most was that nano-GPS chips need a power source to function, which the new currency note very clearly did not have," he said.  His other notable "busts" include proving that a photograph tweeted out by a leading news channel purporting to be of two "terrorists" killed in Indian- administered Kashmir was actually a two-year-old photograph from Punjab, and more recently, explaining that a viral WhatsApp forward of the Indian flag flying atop the Israeli parliament only happened on Photoshop.  Shammas Oliyath, who runs the verification site Check4spam.com is another "warrior" in the battle against fake news.  His content is divided into several categories such as "internet rumours" and "promotions", but he says most of the news he deals with tends to be politically related.  Image copyright AFP Image caption India has more than a billion active phone connections  He gets about 200 WhatsApp inquiries a day, a number that has picked up after he got a little publicity for forcing a media organisation to retract a story which claimed that the assets of wanted Indian gangster Dawood Ibrahim had been frozen.  Despite their best efforts however, all three men know that they simply cannot take on the exploding fake news system on their own.  Mr Sinha says Altnews has done roughly 3.2 million pageviews in five months, while SM Hoaxslayer gets about 250,000 pageviews a month. Mr Oliyath says Check4spam.com gets about 15,000 hits a day.  These numbers pale in comparison to mainstream media sites, and hardly make a dent in the hundreds of thousands of messages that get passed around every day.  Mr Oliyath rues the fact that India\'s mainstream media is a part of the problem.  "In the rush to report first, there is no focus on fact checking," he says.  Ms Raghunath agrees.  "Television in this country has always been tabloid and not serious. The state operated Doordarshan never took off, and the rest was always tabloid - which is to say, talking heads and live news reel," she said, adding that there is very little emphasis on process even in India\'s digital news ecosystem.  Image copyright Shammas Oliyath Image caption Shammas Oliyath (left) shot to prominence after forcing a media organisation to retract a story  What this means is that, a lot of the time, social and mainstream media feed off one another, fuelled by the desire for more eyeballs.  However, she says the larger issue is still one of media literacy and believes that the fight against fake news still needs to be led by mainstream legacy media.  "People segment organisations into those they trust and those that they believe are there to entertain them. There is a higher onus on those that they trust to do more."  This, she says, could be as simple as breaking down an article and educating readers how they work.  "It can be as basic as distinguishing an opinion piece from a news piece and breaking down articles and identifying things like sources, fact and analysis," she says.  As important, she says, is making the truth go viral.  "We have to tackle this issue in a fun way, If people are consuming listicles, we need to do listicles, and if its memes, we need to do memes too. It\'s really important that we are not weird or academic about it".  BBC Reality Check is also dedicated to verifying news and debunking myths',
+ 'newsUrl': 'http://www.bbc.com/news/world-asia-india-40657074'}
+2017-07-24 20:28:00 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.bbc.com/sport/cricket/40698974> (referer: http://www.bbc.com/)
+2017-07-24 20:28:00 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.bbc.com/capital> (referer: http://www.bbc.com/)
+2017-07-24 20:28:00 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.bbc.com/news/world/asia/india> (referer: http://www.bbc.com/)
+2017-07-24 20:28:00 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.bbc.com/news/world-asia-india-40702252> (referer: http://www.bbc.com/)
+2017-07-24 20:28:00 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.bbc.com/capital/story/20170723-the-case-against-personal-brands> (referer: http://www.bbc.com/)
+2017-07-24 20:28:00 [root] INFO: Parsing URL: http://www.bbc.com/news/world-asia-india-40697972
+2017-07-24 20:28:00 [requests.packages.urllib3.connectionpool] INFO: Starting new HTTP connection (1): www.bbc.com
+2017-07-24 20:28:01 [requests.packages.urllib3.connectionpool] DEBUG: "GET /news/world-asia-india-40697972 HTTP/1.1" 200 34857
+2017-07-24 20:28:02 [readability.readability] DEBUG: Removing unlikely candidate - header#orb-banner>#orb-header.orb-nav-pri.orb-nav-pri-white.b-header--white--black.orb-nav-empty
+2017-07-24 20:28:02 [readability.readability] DEBUG: Branch  7.000 li.twite>.twite__panel.arrow-top link density 0.666 ->  2.338
+2017-07-24 20:28:02 [readability.readability] DEBUG: Branch -2.000 ul.sharetools>li.twite link density 0.668 -> -0.664
+2017-07-24 20:28:02 [readability.readability] DEBUG: Branch 63.000 .story-body>.story-body__inner link density 0.023 -> 61.527
+2017-07-24 20:28:02 [readability.readability] DEBUG: Branch 46.500 .column--primary>.story-body link density 0.238 -> 35.455
+2017-07-24 20:28:02 [readability.readability] DEBUG: Branch  7.000 .unit__body>.unit__header link density 0.000 ->  7.000
+2017-07-24 20:28:02 [readability.readability] DEBUG: Branch 31.000 a.unit__link-wrapper>.unit__body link density 0.000 -> 31.000
+2017-07-24 20:28:02 [readability.readability] DEBUG: Branch  7.000 .unit__body>.unit__header link density 0.000 ->  7.000
+2017-07-24 20:28:02 [readability.readability] DEBUG: Branch 31.000 a.unit__link-wrapper>.unit__body link density 0.000 -> 31.000
+2017-07-24 20:28:02 [readability.readability] DEBUG: Branch  4.000 #comp-top-stories-promo.top-stories-promo>a.top-stories-promo-story link density 0.000 ->  4.000
+2017-07-24 20:28:02 [readability.readability] DEBUG: Branch -43.000 .column--secondary>#comp-top-stories-promo.top-stories-promo link density 0.949 -> -2.181
+2017-07-24 20:28:02 [readability.readability] INFO: Top 5 : 61.527 .story-body>.story-body__inner
+2017-07-24 20:28:02 [readability.readability] INFO: Top 5 : 35.455 .column--primary>.story-body
+2017-07-24 20:28:02 [readability.readability] INFO: Top 5 : 31.000 a.unit__link-wrapper>.unit__body
+2017-07-24 20:28:02 [readability.readability] INFO: Top 5 : 31.000 a.unit__link-wrapper>.unit__body
+2017-07-24 20:28:02 [readability.readability] INFO: Top 5 :  7.000 .unit__body>.unit__header
+2017-07-24 20:28:02 [readability.readability] DEBUG: Removed 61.527 .story-body__inner>#bbccom_mpu_1_2_3.bbccom_slot.mpu-ad with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:02 [readability.readability] DEBUG: Not removing div{01}>.story-body__inner of length 1369:  Image copyright AFP Image caption Cairn...
+2017-07-24 20:28:02 [readability.readability] DEBUG: Not removing body>div{01} of length 1369:  Image copyright AFP Image caption Cairn...
+2017-07-24 20:28:02 [requests.packages.urllib3.connectionpool] INFO: Starting new HTTP connection (1): www.bbc.com
+2017-07-24 20:28:03 [requests.packages.urllib3.connectionpool] DEBUG: "GET /news/world-asia-india-40697972 HTTP/1.1" 200 34857
+2017-07-24 20:28:04 [root] INFO: News Article inserted to MongoDB database!
+2017-07-24 20:28:04 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.bbc.com/news/world-asia-india-40697972>
+{'author': 'https://www.facebook.com/bbcnews',
+ 'countriesMentioned': ['British Indian Ocean Territory'],
+ 'newsHeadline': 'India police investigate crude oil theft gang - BBC News',
+ 'newsText': u'![Cairn India oil field in Rajasthan, 2015](https://ichef-1.bbci.co.uk/news/320/cpsprodpb/113C2/production/_97049507_gettyimages-502566336.jpg) Image copyright AFP Image caption Cairn India\'s oilfield in Rajasthan  Police in India have broken up a criminal network accused of using water tankers to steal millions of litres of crude oil from the country\'s biggest onshore field in Rajasthan.  The investigation centres on the Cairn India oilfield in Barmer district and 25 people have been arrested.  Fifty million litres of oil were stolen over a six-year period and sold to two local factories, according to police.  Estimates suggest the crude taken could be worth more than $7m (\xa35.3m).  District police chief Gangandeep Singla told AFP news agency that dozens more arrests could follow.  "The company suspected something fishy was happening and complained to us, and during investigations we found this was an organised ring," he said.  ## Tankers seized  Tankers are used to take waste water from the oilfield. But those involved in the theft were filling two of the five compartments in each tanker with crude, the Hindustan Times reports.  Thirty-nine tankers were used for the theft and 33 have been seized, the paper quotes police as saying. The local factories are alleged to have sold the oil on across India for diesel production and road construction.  Police are looking into allegations that some local staff co-operated with the network.  Cairn India merged last April with Vedanta Resources, a British mining giant.',
+ 'newsUrl': 'http://www.bbc.com/news/world-asia-india-40697972'}
+2017-07-24 20:28:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.bbc.com/sport/cycling> (referer: http://www.bbc.com/)
+2017-07-24 20:28:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.bbc.com/sport/cycling/40700711> (referer: http://www.bbc.com/)
+2017-07-24 20:28:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.bbc.com/sport/cricket/womens> (referer: http://www.bbc.com/)
+2017-07-24 20:28:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.bbc.com/sport/cricket/40700480> (referer: http://www.bbc.com/)
+2017-07-24 20:28:04 [root] INFO: Parsing URL: http://www.bbc.com/sport/cricket/40698974
+2017-07-24 20:28:04 [requests.packages.urllib3.connectionpool] INFO: Starting new HTTP connection (1): www.bbc.com
+2017-07-24 20:28:04 [requests.packages.urllib3.connectionpool] DEBUG: "GET /sport/cricket/40698974 HTTP/1.1" 200 31657
+2017-07-24 20:28:05 [readability.readability] DEBUG: Removing unlikely candidate - header#orb-banner>#orb-header.orb-nav-pri.orb-nav-pri-white.b-header--white--black.orb-nav-empty
+2017-07-24 20:28:05 [readability.readability] DEBUG: Branch -18.000 .sp-media-asset__body.media>.sp-media-asset__smp.mp link density 0.000 -> -18.000
+2017-07-24 20:28:05 [readability.readability] DEBUG: Branch  6.000 figure.sp-media-asset.sp-media-asset--lead>.sp-media-asset__body.media link density 0.000 ->  6.000
+2017-07-24 20:28:05 [readability.readability] DEBUG: Branch 187.000 article.component.component--default.story>#story-body.story-body.sp-story-body.gel-body-copy link density 0.026 -> 182.145
+2017-07-24 20:28:05 [readability.readability] DEBUG: Branch 91.000 #responsive-story-page.gel-layout__item.gel-2/3@l>article.component.component--default.story link density 0.099 -> 81.982
+2017-07-24 20:28:05 [readability.readability] DEBUG: Branch -18.000 .sp-media-asset__body.media>.sp-media-asset__smp.mp link density 0.000 -> -18.000
+2017-07-24 20:28:05 [readability.readability] DEBUG: Branch  6.000 figure.sp-media-asset.sp-media-asset--lead>.sp-media-asset__body.media link density 0.000 ->  6.000
+2017-07-24 20:28:05 [readability.readability] DEBUG: Branch -18.000 .sp-media-asset__body.media>.sp-media-asset__smp.mp link density 0.000 -> -18.000
+2017-07-24 20:28:05 [readability.readability] DEBUG: Branch  6.000 figure.sp-media-asset.sp-media-asset--lead>.sp-media-asset__body.media link density 0.000 ->  6.000
+2017-07-24 20:28:05 [readability.readability] DEBUG: Branch -18.000 .sp-media-asset__body.media>.sp-media-asset__smp.mp link density 0.000 -> -18.000
+2017-07-24 20:28:05 [readability.readability] DEBUG: Branch  6.000 figure.sp-media-asset.sp-media-asset--lead>.sp-media-asset__body.media link density 0.000 ->  6.000
+2017-07-24 20:28:05 [readability.readability] DEBUG: Branch -23.000 li.multi-thumb-promo__item>a.multi-thumb-promo__link link density 0.000 -> -23.000
+2017-07-24 20:28:05 [readability.readability] DEBUG: Branch -27.000 ul.multi-thumb-promo__list>li.multi-thumb-promo__item link density 1.000 -> -0.000
+2017-07-24 20:28:05 [readability.readability] DEBUG: Branch -22.000 li.multi-thumb-promo__item>a.multi-thumb-promo__link link density 0.000 -> -22.000
+2017-07-24 20:28:05 [readability.readability] DEBUG: Branch -26.500 ul.multi-thumb-promo__list>li.multi-thumb-promo__item link density 1.000 -> -0.000
+2017-07-24 20:28:05 [readability.readability] DEBUG: Branch -21.000 li.multi-thumb-promo__item>a.multi-thumb-promo__link link density 0.000 -> -21.000
+2017-07-24 20:28:05 [readability.readability] DEBUG: Branch -26.000 ul.multi-thumb-promo__list>li.multi-thumb-promo__item link density 1.000 -> -0.000
+2017-07-24 20:28:05 [readability.readability] DEBUG: Branch -22.000 li.multi-thumb-promo__item>a.multi-thumb-promo__link link density 0.000 -> -22.000
+2017-07-24 20:28:05 [readability.readability] DEBUG: Branch -26.500 ul.multi-thumb-promo__list>li.multi-thumb-promo__item link density 1.000 -> -0.000
+2017-07-24 20:28:05 [readability.readability] DEBUG: Branch  3.000 tbody>tr{01} link density 0.000 ->  3.000
+2017-07-24 20:28:05 [readability.readability] DEBUG: Branch  5.500 table.sp-story-body__table>tbody link density 0.050 ->  5.225
+2017-07-24 20:28:05 [readability.readability] DEBUG: Branch  4.000 tbody>tr{02} link density 0.000 ->  4.000
+2017-07-24 20:28:05 [readability.readability] DEBUG: Branch  4.000 tbody>tr{03} link density 0.000 ->  4.000
+2017-07-24 20:28:05 [readability.readability] INFO: Top 5 : 182.145 article.component.component--default.story>#story-body.story-body.sp-story-body.gel-body-copy
+2017-07-24 20:28:05 [readability.readability] INFO: Top 5 : 81.982 #responsive-story-page.gel-layout__item.gel-2/3@l>article.component.component--default.story
+2017-07-24 20:28:05 [readability.readability] INFO: Top 5 :  6.000 figure.sp-media-asset.sp-media-asset--lead>.sp-media-asset__body.media
+2017-07-24 20:28:05 [readability.readability] INFO: Top 5 :  6.000 figure.sp-media-asset.sp-media-asset--lead>.sp-media-asset__body.media
+2017-07-24 20:28:05 [readability.readability] INFO: Top 5 :  6.000 figure.sp-media-asset.sp-media-asset--lead>.sp-media-asset__body.media
+2017-07-24 20:28:05 [readability.readability] DEBUG: Not removing .sp-story-body__table-container>table.sp-story-body__table of length 180: Women's World Cup final, Lord'sEngland 2...
+2017-07-24 20:28:05 [readability.readability] DEBUG: Not removing #story-body.story-body.sp-story-body.gel-body-copy>ul of length 700: Tammy Beaumont, who made 23, was named p...
+2017-07-24 20:28:05 [readability.readability] DEBUG: Removed 182.145 #story-body.story-body.sp-story-body.gel-body-copy>ul with weight 0 cause it has too many links 1.000 for its weight 0.
+2017-07-24 20:28:05 [readability.readability] DEBUG: Removed .sp-media-asset__body.media>.sp-media-asset__image.gel-responsive-image with score  0.000 and weight -25
+2017-07-24 20:28:05 [readability.readability] DEBUG: Removed  0.000 figure.sp-media-asset>.sp-media-asset__body.media with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:05 [readability.readability] DEBUG: Removed .sp-media-asset__body.media>.sp-media-asset__image.gel-responsive-image with score  0.000 and weight -25
+2017-07-24 20:28:05 [readability.readability] DEBUG: Removed  0.000 figure.sp-media-asset>.sp-media-asset__body.media with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:05 [readability.readability] DEBUG: Removed .sp-media-asset__body.media>.sp-media-asset__image.gel-responsive-image with score  0.000 and weight -25
+2017-07-24 20:28:05 [readability.readability] DEBUG: Removed  0.000 figure.sp-media-asset>.sp-media-asset__body.media with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:05 [readability.readability] DEBUG: Removed .sp-media-asset__body.media>.sp-media-asset__smp.mp with score -18.000 and weight -25
+2017-07-24 20:28:05 [readability.readability] DEBUG: Removed  0.000 figure.sp-media-asset.sp-media-asset--lead>.sp-media-asset__body.media with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:05 [readability.readability] DEBUG: Removed .sp-media-asset__body.media>.sp-media-asset__smp.mp with score -18.000 and weight -25
+2017-07-24 20:28:05 [readability.readability] DEBUG: Removed  0.000 figure.sp-media-asset.sp-media-asset--lead>.sp-media-asset__body.media with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:05 [readability.readability] DEBUG: Removed .sp-media-asset__body.media>.sp-media-asset__image.gel-responsive-image with score  0.000 and weight -25
+2017-07-24 20:28:05 [readability.readability] DEBUG: Removed  0.000 figure.sp-media-asset>.sp-media-asset__body.media with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:05 [readability.readability] DEBUG: Removed .sp-media-asset__body.media>.sp-media-asset__smp.mp with score -18.000 and weight -25
+2017-07-24 20:28:05 [readability.readability] DEBUG: Removed  0.000 figure.sp-media-asset.sp-media-asset--lead>.sp-media-asset__body.media with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:05 [readability.readability] DEBUG: Removed 182.145 #story-body.story-body.sp-story-body.gel-body-copy>#bbccom_mpu_1_2_3.bbccom_slot with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:05 [readability.readability] DEBUG: Not removing #story-body.story-body.sp-story-body.gel-body-copy>.sp-story-body__table-container of length 180: Women's World Cup final, Lord'sEngland 2...
+2017-07-24 20:28:05 [readability.readability] DEBUG: Removed .sp-media-asset__body.media>.sp-media-asset__smp.mp with score -18.000 and weight -25
+2017-07-24 20:28:05 [readability.readability] DEBUG: Removed  0.000 figure.sp-media-asset.sp-media-asset--lead>.sp-media-asset__body.media with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:05 [requests.packages.urllib3.connectionpool] INFO: Starting new HTTP connection (1): www.bbc.com
+2017-07-24 20:28:05 [requests.packages.urllib3.connectionpool] DEBUG: "GET /sport/cricket/40698974 HTTP/1.1" 200 31657
+2017-07-24 20:28:07 [scrapy.core.scraper] WARNING: Dropped: 
+{'author': '',
+ 'countriesMentioned': ['British Indian Ocean Territory',
+                        'Australia',
+                        'French Southern Territories',
+                        'Central African Republic',
+                        'United States',
+                        'Canada',
+                        'United Kingdom'],
+ 'newsHeadline': "Women's World Cup: England beat India by nine runs in thrilling final at Lord's - BBC Sport",
+ 'newsText': u'Highlights: Shrubsole inspires England to World Cup glory  **Women\'s World Cup final, Lord\'s**   ---   **England 228-7 (50 overs):** Sciver 51, Taylor 45, Goswami 3-23   **India 219 (48.4 overs): **Raut 86, Kaur 51, Shrubsole 6-46   _England won by nine runs_   Scorecard      England completed a stunning fightback to beat India by nine runs and win the Women\'s World Cup at an ecstatic Lord\'s.  Chasing 229, India looked set for victory at 191-3, but Anya Shrubsole pinned Punam Raut lbw for 86 to spark a collapse of seven wickets for 28 runs.  The seamer finished with 6-46 - the best figures in a World Cup final - as India were bowled out for 219 with eight balls unused.  Even as Shrubsole was in the middle of a stunning spell of 5-11 in 19 deliveries, India were within touching distance of the highest successful chase in a World Cup final and a first major trophy.  Fears that England may have missed their chance were raised when Jenny Gunn dropped a sitter at mid-off to reprieve Poonam Yadav.  But Shrubsole bowled Rajeshwari Gayakwad next ball to spark joyous scenes on the pitch and among the majority of fans in a sell-out crowd.  Natalie Sciver made 51 and Sarah Taylor 45 in England\'s 228-7, which proved enough for a fourth World Cup crown.  It ended a wait for a global trophy that went back to 2009 and vindicated the approach of coach Mark Robinson, who dispensed with former captain Charlotte Edwards after defeat in the semi-finals of the 2016 World Twenty20.  The moment England won the Women\'s World Cup  ### New England climb to the top of the world  After losing the World T20 semi to Australia in India last year, Robinson criticised his team\'s fitness and set about making changes.  Edwards was replaced as captain and retired, with new skipper Heather Knight leading a team of players that established themselves in the international arena.  Batters Tammy Beaumont, Lauren Winfeld and Fran Wilson have all been integrated into the top order, Alex Hartley\'s left-arm spin has become integral to the attack and Sarah Taylor has returned from an anxiety-related issue.  Knight\'s side were beaten by India in the first game of the tournament, but steadily improved to top the eight-team group, including beating defending champions Australia.  Their thrilling semi-final victory over South Africa was front-page news, but it was nothing compared to the drama of the final in the rain at a packed, partisan and raucous Lord\'s.  ### Shrubsole\'s dream becomes reality  Before the final, Shrubsole\'s father shared a picture on Twitter of his daughter as a nine-year-old, who said she wanted to play in a World Cup final at Lord\'s.  The vice-captain had already hit the winning runs in the semi-final, and, in the final, lifted England when the World Cup looked to be slipping away.  "It worked wonders for my dad\'s media profile," Shrubsole told BBC Sport. "He\'s not always the most sentimental.  "You maybe have a dream, but you never actually think these things are going to happen. For that dream to be a reality is just amazing."  Raut, who should have been stumped by Taylor on 64, was trapped lbw before Sushma Verma was bowled by Hartley without scoring.  India needed only 33 from 39 balls with five wickets in hand, but Shrubsole, charging in from the Pavilion End, was irresistible.  She removed the dangerous Veda Krishnamurthy, who top-edged a swipe to Sciver, bowled Jhulan Goswami and ran out Shikha Pandey from point.  Deepti Sharma spooned to Sciver at mid-wicket as Shrubsole completed the first five-wicket haul in a World Cup final and, after Gunn\'s error, Shrubsole cleaned up Gayakwad to seal victory in style.  Shrubsole removes Raut to set up tense finale  ### England inch to winning score  England opted to make first use of a used wicket, with openers Winfield and Beaumont sharing nine fours in the first 15 overs. However, England managed only the same number in the next 35.  India took pace off the ball - leg-spinner Yadav managed to bowl as slowly as 33mph - but Sciver and Taylor manouvered the ball well in a fourth-wicket partnership of 83.  When the time came to accelerate, seamer Goswami returned to have Taylor caught down the leg side and both Wilson and Sciver lbw.  England were squeezed, but the late impetus of Katherine Brunt, Gunn and Laura Marsh ensured they just about had enough.  Watch Goswami\'s three wickets for India against England  ### \'I never thought it would come true\'  **England captain Heather Knight:** "I can\'t stop smiling. I am so proud of this group of girls. We made it hard for ourselves but I couldn\'t care less.  "India were batting brilliantly and put good partnerships together. We knew if we hung in and kept the rate at five or six then we would always be in the game.  "We held our nerve. Anya Shrubsole - what a hero."  **Anya Shrubsole, who took 6-46: **"I am lost for words. It is a dream. I never thought it would come true. To be back here as a World Cup winner is amazing.  "It is a fitting final of what was a brilliant World Cup. There was a huge amount of pressure.  "One of the great things about this team is we never give up. One defeat was never going to put us out of the World Cup but we showed a huge amount of fight and that was epitomised by today."  **India skipper Mithali Raj:** "It wasn\'t easy for England but credit to them - they kept their nerve.  "There was a time when the match was in the balance. We panicked and they came out victorious."  Former England captain Michael Vaughan sent his congratulations to Heather Knight\'s side India legend Sachin Tendulkar praised both teams after a dramatic final  ### The stats you may have missed    * Tammy Beaumont, who made 23, was named player of the tournament after finishing as the leading run-scorer with 410, one more than Mithali Raj   * England\'s total was the second highest in a Women\'s World Cup final, bettered only by Australia\'s 259-7 against West Indies in 2013   * Jhulan Goswami\'s 3-23 are the fourth best bowling figures in a World Cup final   * Anya Shrubsole is the first player to take more than four wickets in a World Cup final; England\'s Nicky Shaw\'s 4-34 against New Zealand in 2009 were the previous best figures   * Punam Raut\'s 86 was the fourth highest score in a World Cup final   * England\'s 167-6 against New Zealand in Sydney in 2009 remains the highest successful chase in a World Cup final  India have lost both World Cup finals they have reached, in 2005 and 2017',
+ 'newsUrl': 'http://www.bbc.com/sport/cricket/40698974'}
+2017-07-24 20:28:07 [root] INFO: Parsing URL: http://www.bbc.com/capital
+2017-07-24 20:28:07 [requests.packages.urllib3.connectionpool] INFO: Starting new HTTP connection (1): www.bbc.com
+2017-07-24 20:28:07 [requests.packages.urllib3.connectionpool] DEBUG: "GET /capital HTTP/1.1" 200 32749
+2017-07-24 20:28:08 [readability.readability] DEBUG: Removing unlikely candidate - header#orb-banner>#orb-header.orb-nav-pri.orb-nav-pri-white.b-header--white--black.orb-nav-empty
+2017-07-24 20:28:08 [readability.readability] DEBUG: Branch -18.000 .promo-unit-copy>.promo-unit-copy-lining link density 0.532 -> -8.419
+2017-07-24 20:28:08 [readability.readability] DEBUG: Branch -19.000 .promo-unit-layout-standard>.promo-unit-copy link density 0.532 -> -8.887
+2017-07-24 20:28:08 [readability.readability] DEBUG: Branch -18.000 .promo-unit-copy>.promo-unit-copy-lining link density 0.537 -> -8.336
+2017-07-24 20:28:08 [readability.readability] DEBUG: Branch -19.000 .promo-unit-layout-standard>.promo-unit-copy link density 0.537 -> -8.799
+2017-07-24 20:28:08 [readability.readability] DEBUG: Branch -18.000 .promo-unit-copy>.promo-unit-copy-lining link density 0.454 -> -9.831
+2017-07-24 20:28:08 [readability.readability] DEBUG: Branch -19.000 .promo-unit-layout-standard>.promo-unit-copy link density 0.454 -> -10.377
+2017-07-24 20:28:08 [readability.readability] DEBUG: Branch -16.000 .promo-unit-copy>.promo-unit-copy-lining link density 0.466 -> -8.548
+2017-07-24 20:28:08 [readability.readability] DEBUG: Branch -18.000 .promo-unit-layout-standard>.promo-unit-copy link density 0.466 -> -9.616
+2017-07-24 20:28:08 [readability.readability] DEBUG: Branch  7.000 a.most-popular-item-lining>.most-popular-item-title-wrapper link density 0.000 ->  7.000
+2017-07-24 20:28:08 [readability.readability] DEBUG: Branch  1.000 li.most-popular-item.most-popular-item-capital>a.most-popular-item-lining link density 0.000 ->  1.000
+2017-07-24 20:28:08 [readability.readability] DEBUG: Branch  7.000 a.most-popular-item-lining>.most-popular-item-title-wrapper link density 0.000 ->  7.000
+2017-07-24 20:28:08 [readability.readability] DEBUG: Branch  1.000 li.most-popular-item.most-popular-item-capital>a.most-popular-item-lining link density 0.000 ->  1.000
+2017-07-24 20:28:08 [readability.readability] DEBUG: Branch  7.000 a.most-popular-item-lining>.most-popular-item-title-wrapper link density 0.000 ->  7.000
+2017-07-24 20:28:08 [readability.readability] DEBUG: Branch  1.000 li.most-popular-item.most-popular-item-capital>a.most-popular-item-lining link density 0.000 ->  1.000
+2017-07-24 20:28:08 [readability.readability] DEBUG: Branch  7.000 a.most-popular-item-lining>.most-popular-item-title-wrapper link density 0.000 ->  7.000
+2017-07-24 20:28:08 [readability.readability] DEBUG: Branch  1.000 li.most-popular-item.most-popular-item-capital>a.most-popular-item-lining link density 0.000 ->  1.000
+2017-07-24 20:28:08 [readability.readability] DEBUG: Branch -18.000 .promo-unit-copy>.promo-unit-copy-lining link density 0.535 -> -8.376
+2017-07-24 20:28:08 [readability.readability] DEBUG: Branch -19.000 .promo-unit-layout-standard>.promo-unit-copy link density 0.535 -> -8.842
+2017-07-24 20:28:08 [readability.readability] DEBUG: Branch -18.000 .promo-unit-copy>.promo-unit-copy-lining link density 0.548 -> -8.129
+2017-07-24 20:28:08 [readability.readability] DEBUG: Branch -19.000 .promo-unit-layout-standard>.promo-unit-copy link density 0.548 -> -8.581
+2017-07-24 20:28:08 [readability.readability] DEBUG: Branch -17.000 .promo-unit-copy>.promo-unit-copy-lining link density 0.543 -> -7.767
+2017-07-24 20:28:08 [readability.readability] DEBUG: Branch -18.500 .promo-unit-layout-standard>.promo-unit-copy link density 0.543 -> -8.453
+2017-07-24 20:28:08 [readability.readability] DEBUG: Branch -18.000 .promo-unit-copy>.promo-unit-copy-lining link density 0.500 -> -9.000
+2017-07-24 20:28:08 [readability.readability] DEBUG: Branch -19.000 .promo-unit-layout-standard>.promo-unit-copy link density 0.500 -> -9.500
+2017-07-24 20:28:08 [readability.readability] DEBUG: Branch -18.000 .promo-unit-copy>.promo-unit-copy-lining link density 0.575 -> -7.653
+2017-07-24 20:28:08 [readability.readability] DEBUG: Branch -19.000 .promo-unit-layout-standard.secondary-branded>.promo-unit-copy link density 0.575 -> -8.078
+2017-07-24 20:28:08 [readability.readability] DEBUG: Branch -18.000 .promo-unit-copy>.promo-unit-copy-lining link density 0.417 -> -10.489
+2017-07-24 20:28:08 [readability.readability] DEBUG: Branch -19.000 .promo-unit-layout-standard.secondary-branded>.promo-unit-copy link density 0.417 -> -11.072
+2017-07-24 20:28:08 [readability.readability] DEBUG: Branch -18.000 .promo-unit-copy>.promo-unit-copy-lining link density 0.491 -> -9.166
+2017-07-24 20:28:08 [readability.readability] DEBUG: Branch -19.000 .promo-unit-layout-standard.secondary-branded>.promo-unit-copy link density 0.491 -> -9.675
+2017-07-24 20:28:08 [readability.readability] INFO: Top 5 :  7.000 a.most-popular-item-lining>.most-popular-item-title-wrapper
+2017-07-24 20:28:08 [readability.readability] INFO: Top 5 :  7.000 a.most-popular-item-lining>.most-popular-item-title-wrapper
+2017-07-24 20:28:08 [readability.readability] INFO: Top 5 :  7.000 a.most-popular-item-lining>.most-popular-item-title-wrapper
+2017-07-24 20:28:08 [readability.readability] INFO: Top 5 :  7.000 a.most-popular-item-lining>.most-popular-item-title-wrapper
+2017-07-24 20:28:08 [readability.readability] INFO: Top 5 :  1.000 li.most-popular-item.most-popular-item-capital>a.most-popular-item-lining
+2017-07-24 20:28:08 [readability.readability] DEBUG: Not removing div{01}>.most-popular-item-title-wrapper of length 31:  Why open offices are bad for us 
+2017-07-24 20:28:08 [readability.readability] DEBUG: Not removing body>div{01} of length 31:  Why open offices are bad for us 
+2017-07-24 20:28:08 [requests.packages.urllib3.connectionpool] INFO: Starting new HTTP connection (1): www.bbc.com
+2017-07-24 20:28:08 [requests.packages.urllib3.connectionpool] DEBUG: "GET /capital HTTP/1.1" 200 32749
+2017-07-24 20:28:09 [scrapy.core.scraper] WARNING: Dropped: 
+{'author': '',
+ 'countriesMentioned': [],
+ 'newsHeadline': 'BBC - Capital - Home',
+ 'newsText': u'Why open offices are bad for us',
+ 'newsUrl': 'http://www.bbc.com/capital'}
+2017-07-24 20:28:09 [root] INFO: Parsing URL: http://www.bbc.com/capital/story/20170723-the-case-against-personal-brands
+2017-07-24 20:28:09 [requests.packages.urllib3.connectionpool] INFO: Starting new HTTP connection (1): www.bbc.com
+2017-07-24 20:28:09 [requests.packages.urllib3.connectionpool] DEBUG: "GET /capital/story/20170723-the-case-against-personal-brands HTTP/1.1" 200 49145
+2017-07-24 20:28:10 [readability.readability] DEBUG: Removing unlikely candidate - header#orb-banner>#orb-header.orb-nav-pri.orb-nav-pri-white.b-header--white--black.orb-nav-empty
+2017-07-24 20:28:10 [readability.readability] DEBUG: Branch  8.000 .top-unit>.introduction-wrapper link density 0.000 ->  8.000
+2017-07-24 20:28:10 [readability.readability] DEBUG: Branch  6.500 .primary-content-lining>.top-unit link density 0.509 ->  3.190
+2017-07-24 20:28:10 [readability.readability] DEBUG: Branch 231.000 .bottom-unit>.body-content link density 0.038 -> 222.197
+2017-07-24 20:28:10 [readability.readability] DEBUG: Branch 103.500 .primary-content-lining>.bottom-unit link density 0.038 -> 99.572
+2017-07-24 20:28:10 [readability.readability] DEBUG: Branch  5.000 .body-content>blockquote link density 0.000 ->  5.000
+2017-07-24 20:28:10 [readability.readability] DEBUG: Branch  5.000 .body-content>blockquote link density 0.000 ->  5.000
+2017-07-24 20:28:10 [readability.readability] DEBUG: Branch  5.000 .body-content>blockquote link density 0.000 ->  5.000
+2017-07-24 20:28:10 [readability.readability] DEBUG: Branch  5.000 .body-content>blockquote link density 0.000 ->  5.000
+2017-07-24 20:28:10 [readability.readability] DEBUG: Branch -17.000 .promo-unit-copy>.promo-unit-copy-lining link density 0.458 -> -9.218
+2017-07-24 20:28:10 [readability.readability] DEBUG: Branch -18.500 .promo-unit-layout-standard>.promo-unit-copy link density 0.458 -> -10.032
+2017-07-24 20:28:10 [readability.readability] INFO: Top 5 : 222.197 .bottom-unit>.body-content
+2017-07-24 20:28:10 [readability.readability] INFO: Top 5 : 99.572 .primary-content-lining>.bottom-unit
+2017-07-24 20:28:10 [readability.readability] INFO: Top 5 :  8.000 .top-unit>.introduction-wrapper
+2017-07-24 20:28:10 [readability.readability] INFO: Top 5 :  5.000 .body-content>blockquote
+2017-07-24 20:28:10 [readability.readability] INFO: Top 5 :  5.000 .body-content>blockquote
+2017-07-24 20:28:10 [readability.readability] DEBUG: Removed 222.197 .body-content>ul with weight 0 cause it has too many links 0.979 for its weight 0.
+2017-07-24 20:28:10 [readability.readability] DEBUG: Removed .body-content>.inline-media.inline-image with score  0.000 and weight -25
+2017-07-24 20:28:10 [readability.readability] DEBUG: Removed .body-content>.inline-media.inline-image with score  0.000 and weight -25
+2017-07-24 20:28:10 [readability.readability] DEBUG: Removed .body-content>.inline-media.inline-image with score  0.000 and weight -25
+2017-07-24 20:28:10 [requests.packages.urllib3.connectionpool] INFO: Starting new HTTP connection (1): www.bbc.com
+2017-07-24 20:28:10 [requests.packages.urllib3.connectionpool] DEBUG: "GET /capital/story/20170723-the-case-against-personal-brands HTTP/1.1" 200 49145
+2017-07-24 20:28:12 [root] INFO: News Article inserted to MongoDB database!
+2017-07-24 20:28:12 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.bbc.com/capital/story/20170723-the-case-against-personal-brands>
+{'author': 'Jessica Holland',
+ 'countriesMentioned': ['Egypt',
+                        'Kazakhstan',
+                        'Cambodia',
+                        'United States',
+                        'France',
+                        'Germany'],
+ 'newsHeadline': 'BBC - Capital - The case against personal brands',
+ 'newsText': u'Sheryl Sandberg, noted author and Facebook\u2019s Chief Operating Officer, was recently asked how business people should manage their personal brands.  Her answer was unexpected.  \u201cYou don\u2019t have a brand,\u201d she responded during the question and answer session at The Wharton School at the University of Pennsylvania in May 2017.  > Don\u2019t package yourself - Sheryl Sandberg  \u201cI get this question a lot, and I shudder every time. Crest has a brand. Perrier has a brand. People are not that simple. When we are packaged, we\u2019re ineffective and inauthentic.\u201d  What we each have is a voice, she added, which can be complex, contradictory and sometimes wrong. Her advice? \u201cDon\u2019t package yourself.\u201d Just speak honestly, factually and from your own experience.  Sandberg is one of the most powerful figures in social media, and it\u2019s social media that\u2019s has helped make the idea of personal branding so ubiquitous. So, has this phenomenon had its day? Sandberg may be ahead of the curve in rejecting the idea as absurd and dehumanising.  **Self and self-promotion**  The concept of building a personal brand dates back decades. In 1997, Fast Company published an article titled \u201cThe Brand Called You\u201d that popularised the concept, arguing that it wasn\u2019t just CEOs or celebrities that needed to carefully craft their image. It was everyone.  The rise of self-promotion and branding partnerships on social media means that it\u2019s now second nature for people to build a personal brand: to put some thought into the image they project online and the impression it gives to friends, clients, colleagues and even potential employers or sponsors.  > Self-promotion can be exhausting  That emphasis on presenting a strong public image is especially pronounced in these uncertain economic times; a growing, fiercely competitive \u201cgig economy\u201d has made digital profiles a crucial part of grabbing work opportunities. Freelancing has risen by 43% in the UK since 2008, according to an IPSE survey, and a report by the software company Intuit predicted that 40% of the United States workforce would be made up by independent workers by 2020.  _You might also like:_  \u201cPersonal branding is now being taught in Kazakhstan, Egypt and even Cambodia. All around the world, job counsellors are telling people to come up with three to four words that reflect their authentic self,\u201d according to Ilana Gershon, an associate anthropology professor at Indiana University Bloomington.  Traditional branding paints a picture of products that are flawless and consistent \u2013 think of famous brand slogans from \u201cNever knowingly undersold\u201d to \u201cThe best a man can get.\u201d Humans don\u2019t work that way, as Sandberg acknowledged. We are complicated and fallible. There\u2019s a risk that creating a \u201cperfect\u201d personal brand comes with enormous pressure to live up to it.  There has always been some unease with the idea that humans can be packaged, and personal brands often come under fire for being artificial portrayals of self-indulgent people. In 2012, the satirical online newspaper The Onion mocked the trend with the headline \u201c\u2018I Am A Brand,\u2019 Pathetic Man Says.\u201d  The story goes on to describe \u201ca sad, pathetic local web developer\u201d who \u201csees his worthless daily blog posts, endless Facebook status updates, and aggravating Foursquare check-ins as \u2018extensions of his brand name.\u2019\u201d The point the writer is making: no-one cares that much about the message we\u2019re trying to project. We\u2019ll be valued at work by doing a good job, not by attempting to project a consistently perfect image.  Self-promotion can also be exhausting.  \u201cWhen people are trying to create a personal brand\u2026 they must be always on,\u201d says Ilana Gershon, author of Down and Out in the New Economy. This might mean updating social media feeds several times a day with carefully curated content, palatable to the people they may want to socialise or work with.  This, she says, \u201cintroduces a new way of constantly policing yourself. It forces you to be far more instrumental about your personal life, seeing yourself as a perpetually performing for a business-driven gaze.\u201d  Competition to outperform rivals is made more acute by the fact that it\u2019s relatively cheap to buy artificially generated Facebook likes, Instagram followers, Twitter retweets, and all the other metrics of social-media success.  The British author Ella Woodward, who runs the healthy-eating blog Deliciously Ella and has more than a million Instagram followers, has spoken about her social-media burnout in interviews. \u201cIt\u2019s easy when you work in a digital world that doesn\u2019t stop, to never stop,\u201d she told the marketing magazine Campaign, \u201cand therefore share every aspect of your life. You can get quite exposed, and the bigger you are, the more you\u2019re going to attract criticism.\u201d  Against this backdrop, Sandberg\u2019s opinion of personal branding could signal the death knell of the concept.  **Communicating ****\u2018****you****\u2019**  Others, however, believe the idea has merit.  Jennifer Holloway, a personal-branding consultant who lives in the Yorkshire Dales, says the criticism is based on a misunderstanding. \u201cIt\u2019s not fakery,\u201d she says of creating a personal branding strategy. \u201cIt\u2019s \u2018What brand am I already?\u2019\u201d  > Don\u2019t expect to have a personal brand that everybody loves. It\u2019s about subtlety and authenticity  Holloway sees the process in practical terms. People form an idea of you based on what you say, how you act and what you look like, anyway. Why not spend some time thinking about your best qualities and idiosyncrasies, so that your online profiles are warm, genuine and positive, and you have a clear answer to questions like, \u201cWhat do you do?\u201d  Her key advice: \u201cDo not try to second guess, \u2018What kind of person would this employer like and how do I become that?\u2019 Don\u2019t expect to have a personal brand that everybody loves. It\u2019s about subtlety and authenticity.\u201d She also advises against going overboard, saying that it\u2019s better to stick to one social-media platform and do it well than to stretch yourself too thin.  Molly Crist and Katerina Clauhs Dhand have figured out how to strike this balance. Two millennial-age sisters from Philadelphia in the US who launched a boutique travel company, Onward Travel, in 2014, they share some of Sheryl Sandberg\u2019s scepticism about personal branding while realising that they can\u2019t avoid it completely.  Visitors to the website can watch a video of the sisters eating pho, drinking margaritas, and describing their upbringing on a farm in Pennsylvania, where their mother and grandmother had been running cookery classes since the early 1990s. \u201cIt could be much more polished,\u201d Dhand says, \u201cbut it shows who we are, it\u2019s a little silly. I hope it communicates that we\u2019re real people and that inspires trust.\u201d  > It\u2019s not worthwhile to push the personal branding past a certain point  Crist acknowledges that \u201cit\u2019s important to communicate our story and ourselves to our customers,\u201d but says it\u2019s not worthwhile to push the personal branding past a certain point. For example, Onward Travel is on the usual social media platforms, but, Crist explains, \u201cit\u2019s not our number one priority. We have learned that they take an incredible amount of time and thought to manage, and neither of us are overly inclined to share online in the first place.\u201d  She\u2019s glad that, unlike some influencers or life coaches who are reliant on self-promotion, \u201cwe are ultimately selling a guided tour, we\u2019re not selling ourselves.\u201d  _To comment on this story or anything else you have seen on BBC Capital, please head over to our_\xa0Facebook_ page or message us on _Twitter.  _If you liked this story, sign up for the weekly bbc.com features _**_newsletter_**_\xa0called "If You Only Read 6 Things This Week". A handpicked selection of stories from BBC Future, Culture, Capital and Travel, delivered to your inbox every Friday._',
+ 'newsUrl': 'http://www.bbc.com/capital/story/20170723-the-case-against-personal-brands'}
+2017-07-24 20:28:12 [root] INFO: Parsing URL: http://www.bbc.com/news/world/asia/india
+2017-07-24 20:28:12 [requests.packages.urllib3.connectionpool] INFO: Starting new HTTP connection (1): www.bbc.com
+2017-07-24 20:28:14 [requests.packages.urllib3.connectionpool] DEBUG: "GET /news/world/asia/india HTTP/1.1" 200 33601
+2017-07-24 20:28:14 [readability.readability] DEBUG: Removing unlikely candidate - header#orb-banner>#orb-header.orb-nav-pri.orb-nav-pri-white.b-header--white--black.orb-nav-empty
+2017-07-24 20:28:14 [readability.readability] DEBUG: Branch 32.000 .buzzard-item>.buzzard__body link density 0.037 -> 30.806
+2017-07-24 20:28:14 [readability.readability] DEBUG: Branch  6.000 .buzzard.faux-block-link>.buzzard-item link density 0.555 ->  2.669
+2017-07-24 20:28:14 [readability.readability] DEBUG: Branch 32.000 .pigeon-item.faux-block-link>.pigeon-item__body link density 0.260 -> 23.676
+2017-07-24 20:28:14 [readability.readability] DEBUG: Branch  6.000 .pigeon__column.pigeon__column--a>.pigeon-item.faux-block-link link density 0.564 ->  2.617
+2017-07-24 20:28:14 [readability.readability] DEBUG: Branch 33.000 .pigeon-item.faux-block-link>.pigeon-item__body link density 0.220 -> 25.736
+2017-07-24 20:28:14 [readability.readability] DEBUG: Branch  6.500 .pigeon__column.pigeon__column--a>.pigeon-item.faux-block-link link density 0.509 ->  3.194
+2017-07-24 20:28:14 [readability.readability] DEBUG: Branch 32.000 .sparrow-item.faux-block-link>.sparrow-item__body link density 0.143 -> 27.429
+2017-07-24 20:28:14 [readability.readability] DEBUG: Branch  6.000 .sparrow.sparrow__3.sparrow__light-3>.sparrow-item.faux-block-link link density 0.298 ->  4.215
+2017-07-24 20:28:14 [readability.readability] DEBUG: Branch 32.000 .sparrow-item.faux-block-link>.sparrow-item__body link density 0.161 -> 26.851
+2017-07-24 20:28:14 [readability.readability] DEBUG: Branch  6.000 .sparrow.sparrow__3.sparrow__light-3>.sparrow-item.faux-block-link link density 0.327 ->  4.036
+2017-07-24 20:28:14 [readability.readability] DEBUG: Branch 32.000 .sparrow-item.sparrow-item--has-byline.faux-block-link>.sparrow-item__body link density 0.200 -> 25.600
+2017-07-24 20:28:14 [readability.readability] DEBUG: Branch  6.000 .sparrow.sparrow__3.sparrow__light-3>.sparrow-item.sparrow-item--has-byline.faux-block-link link density 0.309 ->  4.145
+2017-07-24 20:28:14 [readability.readability] DEBUG: Branch 33.000 .sparrow-item.faux-block-link>.sparrow-item__body link density 0.258 -> 24.500
+2017-07-24 20:28:14 [readability.readability] DEBUG: Branch  6.500 .sparrow.sparrow__3.sparrow__light-3>.sparrow-item.faux-block-link link density 0.485 ->  3.351
+2017-07-24 20:28:14 [readability.readability] DEBUG: Branch 32.000 .sparrow-item.faux-block-link>.sparrow-item__body link density 0.186 -> 26.062
+2017-07-24 20:28:14 [readability.readability] DEBUG: Branch  6.000 .sparrow.sparrow__3.sparrow__light-3>.sparrow-item.faux-block-link link density 0.355 ->  3.871
+2017-07-24 20:28:14 [readability.readability] DEBUG: Branch 32.000 .sparrow-item.faux-block-link>.sparrow-item__body link density 0.227 -> 24.742
+2017-07-24 20:28:14 [readability.readability] DEBUG: Branch  6.000 .sparrow.sparrow__3.sparrow__light-3>.sparrow-item.faux-block-link link density 0.392 ->  3.648
+2017-07-24 20:28:14 [readability.readability] DEBUG: Branch  9.000 .correspondent-promo__correspondent.correspondent-promo__index-0>.correspondent-promo__latest-story link density 0.313 ->  6.184
+2017-07-24 20:28:14 [readability.readability] DEBUG: Branch -18.000 #comp-correspondents-promo.correspondent-promo>.correspondent-promo__correspondent.correspondent-promo__index-0 link density 0.426 -> -10.325
+2017-07-24 20:28:14 [readability.readability] DEBUG: Branch  7.000 li.waterfowl__item--wrapper>.waterfowl__item.faux-block-link link density 0.443 ->  3.897
+2017-07-24 20:28:14 [readability.readability] DEBUG: Branch -2.000 ul.waterfowl__items.waterfowl__items--item-count-4>li.waterfowl__item--wrapper link density 0.443 -> -1.113
+2017-07-24 20:28:14 [readability.readability] DEBUG: Branch  7.000 li.waterfowl__item--wrapper>.waterfowl__item.faux-block-link link density 0.443 ->  3.897
+2017-07-24 20:28:14 [readability.readability] DEBUG: Branch -2.000 ul.waterfowl__items.waterfowl__items--item-count-4>li.waterfowl__item--wrapper link density 0.443 -> -1.113
+2017-07-24 20:28:14 [readability.readability] DEBUG: Branch  7.000 li.waterfowl__item--wrapper>.waterfowl__item.faux-block-link link density 0.393 ->  4.247
+2017-07-24 20:28:14 [readability.readability] DEBUG: Branch -2.000 ul.waterfowl__items.waterfowl__items--item-count-4>li.waterfowl__item--wrapper link density 0.393 -> -1.213
+2017-07-24 20:28:14 [readability.readability] DEBUG: Branch  7.000 li.waterfowl__item--wrapper>.waterfowl__item.waterfowl__item--coming-up.faux-block-link link density 0.316 ->  4.785
+2017-07-24 20:28:14 [readability.readability] DEBUG: Branch -2.000 ul.waterfowl__items.waterfowl__items--item-count-4>li.waterfowl__item--wrapper link density 0.316 -> -1.367
+2017-07-24 20:28:14 [readability.readability] INFO: Top 5 : 30.806 .buzzard-item>.buzzard__body
+2017-07-24 20:28:14 [readability.readability] INFO: Top 5 : 27.429 .sparrow-item.faux-block-link>.sparrow-item__body
+2017-07-24 20:28:14 [readability.readability] INFO: Top 5 : 26.851 .sparrow-item.faux-block-link>.sparrow-item__body
+2017-07-24 20:28:14 [readability.readability] INFO: Top 5 : 26.062 .sparrow-item.faux-block-link>.sparrow-item__body
+2017-07-24 20:28:14 [readability.readability] INFO: Top 5 : 25.736 .pigeon-item.faux-block-link>.pigeon-item__body
+2017-07-24 20:28:14 [readability.readability] DEBUG: Not removing .buzzard__info-list>ul.mini-info-list of length 35:  24 July 2017 From the section India 
+2017-07-24 20:28:14 [readability.readability] DEBUG: Not removing .buzzard__body>.buzzard__info-list of length 35:  24 July 2017 From the section India 
+2017-07-24 20:28:14 [readability.readability] DEBUG: Not removing div{01}>.buzzard__body of length 134:  The explosion of mobile phones and conn...
+2017-07-24 20:28:14 [readability.readability] DEBUG: Not removing body>div{01} of length 134:  The explosion of mobile phones and conn...
+2017-07-24 20:28:14 [requests.packages.urllib3.connectionpool] INFO: Starting new HTTP connection (1): www.bbc.com
+2017-07-24 20:28:14 [requests.packages.urllib3.connectionpool] DEBUG: "GET /news/world/asia/india HTTP/1.1" 200 33601
+2017-07-24 20:28:15 [root] INFO: News Article inserted to MongoDB database!
+2017-07-24 20:28:15 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.bbc.com/news/world/asia/india>
+{'author': 'https://www.facebook.com/bbcnews',
+ 'countriesMentioned': ['British Indian Ocean Territory'],
+ 'newsHeadline': 'India - BBC News',
+ 'newsText': u'The explosion of mobile phones and connectivity has fuelled a scourge of fake news in the country.    * 24 July 2017    * From the section India',
+ 'newsUrl': 'http://www.bbc.com/news/world/asia/india'}
+2017-07-24 20:28:15 [root] INFO: Parsing URL: http://www.bbc.com/news/world-asia-india-40702252
+2017-07-24 20:28:15 [requests.packages.urllib3.connectionpool] INFO: Starting new HTTP connection (1): www.bbc.com
+2017-07-24 20:28:16 [requests.packages.urllib3.connectionpool] DEBUG: "GET /news/world-asia-india-40702252 HTTP/1.1" 200 36531
+2017-07-24 20:28:16 [readability.readability] DEBUG: Removing unlikely candidate - header#orb-banner>#orb-header.orb-nav-pri.orb-nav-pri-white.b-header--white--black.orb-nav-empty
+2017-07-24 20:28:16 [readability.readability] DEBUG: Branch  7.000 li.twite>.twite__panel.arrow-top link density 0.666 ->  2.338
+2017-07-24 20:28:16 [readability.readability] DEBUG: Branch -2.000 ul.sharetools>li.twite link density 0.668 -> -0.664
+2017-07-24 20:28:16 [readability.readability] DEBUG: Branch 120.000 .story-body>.story-body__inner link density 0.040 -> 115.257
+2017-07-24 20:28:16 [readability.readability] DEBUG: Branch 75.000 .column--primary>.story-body link density 0.127 -> 65.458
+2017-07-24 20:28:16 [readability.readability] DEBUG: Branch  7.000 .unit__body>.unit__header link density 0.000 ->  7.000
+2017-07-24 20:28:16 [readability.readability] DEBUG: Branch 31.000 a.unit__link-wrapper>.unit__body link density 0.000 -> 31.000
+2017-07-24 20:28:16 [readability.readability] DEBUG: Branch  7.000 .unit__body>.unit__header link density 0.000 ->  7.000
+2017-07-24 20:28:16 [readability.readability] DEBUG: Branch 31.000 a.unit__link-wrapper>.unit__body link density 0.000 -> 31.000
+2017-07-24 20:28:16 [readability.readability] DEBUG: Branch  7.000 .unit__body>.unit__header link density 0.000 ->  7.000
+2017-07-24 20:28:16 [readability.readability] DEBUG: Branch 31.000 a.unit__link-wrapper>.unit__body link density 0.000 -> 31.000
+2017-07-24 20:28:16 [readability.readability] DEBUG: Branch  4.000 #comp-top-stories-promo.top-stories-promo>a.top-stories-promo-story link density 0.000 ->  4.000
+2017-07-24 20:28:16 [readability.readability] DEBUG: Branch -43.000 .column--secondary>#comp-top-stories-promo.top-stories-promo link density 0.949 -> -2.181
+2017-07-24 20:28:16 [readability.readability] INFO: Top 5 : 115.257 .story-body>.story-body__inner
+2017-07-24 20:28:16 [readability.readability] INFO: Top 5 : 65.458 .column--primary>.story-body
+2017-07-24 20:28:16 [readability.readability] INFO: Top 5 : 31.000 a.unit__link-wrapper>.unit__body
+2017-07-24 20:28:16 [readability.readability] INFO: Top 5 : 31.000 a.unit__link-wrapper>.unit__body
+2017-07-24 20:28:16 [readability.readability] INFO: Top 5 : 31.000 a.unit__link-wrapper>.unit__body
+2017-07-24 20:28:16 [readability.readability] DEBUG: Not removing .story-body__inner>ul.story-body__unordered-list of length 363:  A child under 16 is raped every 155 min...
+2017-07-24 20:28:16 [readability.readability] DEBUG: Removed 115.257 .story-body__inner>ul.story-body__unordered-list with weight 25 cause it has too many links 0.985 for its weight 25.
+2017-07-24 20:28:16 [readability.readability] DEBUG: Removed 115.257 .story-body__inner>#bbccom_mpu_1_2_3.bbccom_slot.mpu-ad with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:16 [requests.packages.urllib3.connectionpool] INFO: Starting new HTTP connection (1): www.bbc.com
+2017-07-24 20:28:17 [requests.packages.urllib3.connectionpool] DEBUG: "GET /news/world-asia-india-40702252 HTTP/1.1" 200 36531
+2017-07-24 20:28:18 [root] INFO: News Article inserted to MongoDB database!
+2017-07-24 20:28:18 [scrapy.core.scraper] DEBUG: Scraped from <200 http://www.bbc.com/news/world-asia-india-40702252>
+{'author': 'https://www.facebook.com/bbcnews',
+ 'countriesMentioned': ['British Indian Ocean Territory',
+                        'India',
+                        'United States',
+                        'Canada'],
+ 'newsHeadline': "India court hears 10-year-old rape victim's abortion plea - BBC News",
+ 'newsText': u'![A protest in India against child sex abuse](https://ichef.bbci.co.uk/news/320/cpsprodpb/0E2B/production/_86972630_gettyimages-459218004.jpg) Image copyright AFP Image caption Campaigners say parents are generally reluctant to admit child sexual abuse and incest is almost always hushed up  India\'s Supreme Court has ordered doctors to examine a pregnant 10-year-old rape victim whose parents want permission for her to abort her baby.  The child is reported to be 26 weeks pregnant and doctors say her body is not developed enough to carry a baby.  Indian law does not allow terminations after 20 weeks unless doctors confirm the mother\'s life is in danger.  The girl alleges she was raped several times in the past seven months by her uncle, who has been arrested.  Her pregnancy was only recently discovered when her parents took her to hospital after she complained of stomach pain.  She will be examined on Wednesday by Chandigarh\'s Postgraduate Institute of Medical Education and Research. Its doctors will advise the Supreme Court on how much risk to her life she faces by either carrying the baby to term or having an abortion.  Last week, a district court in the northern city of Chandigarh in Punjab turned down her parents\' petition to allow the child to abort.  The tough law against abortion was introduced in 1971 to prevent illegal and unsafe abortions and curb maternal mortality, and the restrictions remain an important weapon in India\'s fight against a skewed gender ratio which has resulted from a deep-seated cultural preference for sons. Millions of female foetuses have been aborted over the years by pregnant women after undergoing foetal gender testing.  But in recent years, Indian courts have been inundated with petitions, many from child rape survivors, wanting to terminate pregnancies after 20 weeks, the BBC\'s Geeta Pandey in Delhi says.  In most such cases, the pregnancy is not even discovered until after the 20-week period is over because the children are themselves unaware of their condition, our correspondent adds.  In May, a court in Haryana state asked medical experts to take a call on a similar plea and a panel of doctors decided to carry out the termination.  In the latest case, doctors who have already examined the girl found her pelvic bones had not fully developed because of her age and said the life of both mother and baby were at "very serious risk", lawyer Alakh Alok Srivastava says in his petition.  "Medical experts have categorically opined that if the 10-year-old is forced to give birth, either through normal delivery or even through caesarean- section, it may be fatal to the life of the rape survivor as well as to her child," the petition says.  In his public interest petition, he has also asked the Supreme Court to issue guidelines to deal with such cases in future, by ordering the authorities to set up teams of experts in every district to take quick decisions in cases involving child rape survivors.  Indian media reports say a psychiatrist, who was part of the team of doctors who met the girl, has said that "she doesn\'t understand that she is pregnant or the implications of being pregnant".  The girl belongs to an extremely poor family, her father is a government employee and mother works as a domestic help.  Medical experts say girls can start menstruating and ovulating at nine, but their bodies are not mature enough for pregnancy at that age.  India is home to the largest number of sexually abused children globally, with some campaigners saying it has reached epidemic proportions. But there\'s a general reluctance to talk about the problem and it\'s rarely discussed in public.  Studies have shown that in large numbers of cases the abusers are known to the children and include care-givers like parents, relatives and teachers.  * * *  Image copyright AFP  ## The scale of abuse in India    * A child under 16 is raped every 155 minutes, a child under 10 every 13 hours   * More than 10,000 children were raped in 2015   * 240 million women living in India were married before they turned 18    * 53.22% of children who participated in a government study reported some form of sexual abuse   * 50% of abusers are known to the child or are "persons in trust and care-givers"   _Sources: Indian government, Unicef_  * * *',
+ 'newsUrl': 'http://www.bbc.com/news/world-asia-india-40702252'}
+2017-07-24 20:28:18 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET http://www.bbc.co.uk/help/web/links/> from <GET http://www.bbc.com/help/web/links/>
+2017-07-24 20:28:18 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET http://www.bbc.com/usingthebbc/cookies/> from <GET http://www.bbc.com/privacy/cookies/international/>
+2017-07-24 20:28:18 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET http://www.bbc.co.uk/contact/> from <GET http://www.bbc.com/contact/>
+2017-07-24 20:28:18 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET http://www.bbc.co.uk/guidance/> from <GET http://www.bbc.com/guidance/>
+2017-07-24 20:28:18 [root] INFO: Parsing URL: http://www.bbc.com/sport/cycling
+2017-07-24 20:28:18 [requests.packages.urllib3.connectionpool] INFO: Starting new HTTP connection (1): www.bbc.com
+2017-07-24 20:28:19 [requests.packages.urllib3.connectionpool] DEBUG: "GET /sport/cycling HTTP/1.1" 200 31004
+2017-07-24 20:28:19 [readability.readability] DEBUG: Removing unlikely candidate - header#orb-banner>#orb-header.orb-nav-pri.orb-nav-pri-white.b-header--white--black.orb-nav-empty
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch 34.000 .lakeside__body>.lakeside__content link density 0.242 -> 25.764
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch 32.000 article.clearfix.faux-block-link.lakeside.lakeside--reverse.lakeside--lead.lakeside--has-media>.lakeside__body link density 0.232 -> 24.571
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch 33.000 .lakeside__body>.lakeside__content link density 0.213 -> 25.967
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch 31.500 article.clearfix.faux-block-link.lakeside.lakeside--auto.lakeside--has-media>.lakeside__body link density 0.205 -> 25.034
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch 33.000 .lakeside__body>.lakeside__content link density 0.254 -> 24.619
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch 31.500 article.clearfix.faux-block-link.lakeside.lakeside--auto.lakeside--has-media>.lakeside__body link density 0.245 -> 23.786
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch 34.000 .lakeside__body>.lakeside__content link density 0.273 -> 24.727
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch 32.000 article.clearfix.faux-block-link.lakeside.lakeside--auto.lakeside--has-media>.lakeside__body link density 0.282 -> 22.986
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch 32.000 .gel-layout__item.gel-7/12.gel-1/1@m>.article-block__body link density 0.354 -> 20.667
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch  6.000 .gel-layout>.gel-layout__item.gel-7/12.gel-1/1@m link density 0.354 ->  3.875
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch -1.000 ul#manual-stats-accordion.accordion.manual-stats-link_list>li.manual-stats-link__item link density 0.364 -> -0.636
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch -2.000 .layout--bleed-right-wide__inner>ul#manual-stats-accordion.accordion.manual-stats-link_list link density 0.437 -> -1.127
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch 33.000 .lakeside__body>.lakeside__content link density 0.268 -> 24.153
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch 31.500 article.clearfix.faux-block-link.lakeside.lakeside--stacked.lakeside--has-media>.lakeside__body link density 0.268 -> 23.055
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch 10.000 .media>.media__body link density 0.000 -> 10.000
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch -17.500 .gel-flag__body>.media link density 0.000 -> -17.500
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch 33.000 .lakeside__body>.lakeside__content link density 0.302 -> 23.048
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch 31.500 article.clearfix.faux-block-link.lakeside.lakeside--has-media>.lakeside__body link density 0.299 -> 22.079
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch 32.000 .lakeside__body>.lakeside__content link density 0.278 -> 23.111
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch 31.000 article.clearfix.faux-block-link.lakeside.lakeside--has-media>.lakeside__body link density 0.278 -> 22.389
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch 35.000 .lakeside__body>.lakeside__content link density 0.294 -> 24.718
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch 32.500 article.clearfix.faux-block-link.lakeside.lakeside--has-media>.lakeside__body link density 0.309 -> 22.452
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch 33.000 .lakeside__body>.lakeside__content link density 0.381 -> 20.421
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch 31.500 article.clearfix.faux-block-link.lakeside.lakeside--has-media>.lakeside__body link density 0.370 -> 19.844
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch 34.000 .lakeside__body>.lakeside__content link density 0.221 -> 26.486
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch 32.000 article.clearfix.faux-block-link.lakeside.lakeside--has-media>.lakeside__body link density 0.228 -> 24.699
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch 34.000 .lakeside__body>.lakeside__content link density 0.158 -> 28.641
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch 32.000 article.clearfix.faux-block-link.lakeside.lakeside--has-media>.lakeside__body link density 0.164 -> 26.744
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch -23.000 li.multi-thumb-promo__item>a.multi-thumb-promo__link link density 0.000 -> -23.000
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch -27.000 ul.multi-thumb-promo__list>li.multi-thumb-promo__item link density 1.000 -> -0.000
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch -19.000 li.multi-thumb-promo__item>a.multi-thumb-promo__link link density 0.000 -> -19.000
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch -25.000 ul.multi-thumb-promo__list>li.multi-thumb-promo__item link density 1.000 -> -0.000
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch -22.000 li.multi-thumb-promo__item>a.multi-thumb-promo__link link density 0.000 -> -22.000
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch -26.500 ul.multi-thumb-promo__list>li.multi-thumb-promo__item link density 1.000 -> -0.000
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch -21.000 li.multi-thumb-promo__item>a.multi-thumb-promo__link link density 0.000 -> -21.000
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch -26.000 ul.multi-thumb-promo__list>li.multi-thumb-promo__item link density 1.000 -> -0.000
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch 32.000 article.aintree__item.clearfix.faux-block-link.gel-long-primer>.aintree_article-body link density 0.987 ->  0.416
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch  1.000 .gel-layout__item.gel-1/2@xs.gel-1/3@m.gel-1/4@l.gel-1/3@xxl>article.aintree__item.clearfix.faux-block-link.gel-long-primer link density 0.987 ->  0.013
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch 32.000 article.aintree__item.clearfix.faux-block-link.gel-long-primer>.aintree_article-body link density 0.979 ->  0.667
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch  1.000 .gel-layout__item.gel-1/2@xs.gel-1/3@m.gel-1/4@l.gel-1/3@xxl>article.aintree__item.clearfix.faux-block-link.gel-long-primer link density 0.980 ->  0.020
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch 32.000 article.aintree__item.clearfix.faux-block-link.gel-long-primer>.aintree_article-body link density 0.989 ->  0.337
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch  1.000 .gel-layout__item.gel-1/2@xs.gel-1/3@m.gel-1/4@l.gel-1/3@xxl>article.aintree__item.clearfix.faux-block-link.gel-long-primer link density 0.990 ->  0.010
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch 32.000 article.aintree__item.clearfix.faux-block-link.gel-long-primer>.aintree_article-body link density 0.984 ->  0.516
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch  1.000 .gel-layout__item.gel-1/2@xs.gel-1/3@m.gel-1/4@l.gel-1/3@xxl>article.aintree__item.clearfix.faux-block-link.gel-long-primer link density 0.984 ->  0.016
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch 32.000 article.aintree__item.clearfix.faux-block-link.gel-long-primer>.aintree_article-body link density 0.980 ->  0.640
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch  1.000 .gel-layout__item.gel-1/2@xs.gel-1/3@m.gel-1/4@l.gel-1/3@xxl>article.aintree__item.clearfix.faux-block-link.gel-long-primer link density 0.980 ->  0.020
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch 33.000 article.aintree__item.clearfix.faux-block-link.gel-long-primer>.aintree_article-body link density 0.976 ->  0.805
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch  1.500 .gel-layout__item.gel-1/2@xs.gel-1/3@m.gel-1/4@l.gel-1/3@xxl>article.aintree__item.clearfix.faux-block-link.gel-long-primer link density 0.978 ->  0.034
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch 32.000 article.aintree__item.clearfix.faux-block-link.gel-long-primer>.aintree_article-body link density 0.978 ->  0.696
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch  1.000 .gel-layout__item.gel-1/2@xs.gel-1/3@m.gel-1/4@l.gel-1/3@xxl>article.aintree__item.clearfix.faux-block-link.gel-long-primer link density 0.980 ->  0.020
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch 32.000 article.aintree__item.clearfix.faux-block-link.gel-long-primer>.aintree_article-body link density 0.977 ->  0.744
+2017-07-24 20:28:19 [readability.readability] DEBUG: Branch  1.000 .gel-layout__item.gel-1/2@xs.gel-1/3@m.gel-1/4@l.gel-1/3@xxl>article.aintree__item.clearfix.faux-block-link.gel-long-primer link density 0.978 ->  0.022
+2017-07-24 20:28:19 [readability.readability] INFO: Top 5 : 28.641 .lakeside__body>.lakeside__content
+2017-07-24 20:28:19 [readability.readability] INFO: Top 5 : 26.744 article.clearfix.faux-block-link.lakeside.lakeside--has-media>.lakeside__body
+2017-07-24 20:28:19 [readability.readability] INFO: Top 5 : 26.486 .lakeside__body>.lakeside__content
+2017-07-24 20:28:19 [readability.readability] INFO: Top 5 : 25.967 .lakeside__body>.lakeside__content
+2017-07-24 20:28:19 [readability.readability] INFO: Top 5 : 25.764 .lakeside__body>.lakeside__content
+2017-07-24 20:28:19 [readability.readability] DEBUG: Not removing div{01}>.lakeside__content of length 154:  This week's sport on the BBC includes t...
+2017-07-24 20:28:19 [readability.readability] DEBUG: Not removing body>div{01} of length 154:  This week's sport on the BBC includes t...
+2017-07-24 20:28:19 [requests.packages.urllib3.connectionpool] INFO: Starting new HTTP connection (1): www.bbc.com
+2017-07-24 20:28:20 [requests.packages.urllib3.connectionpool] DEBUG: "GET /sport/cycling HTTP/1.1" 200 31004
+2017-07-24 20:28:20 [scrapy.core.scraper] WARNING: Dropped: 
+{'author': '',
+ 'countriesMentioned': [],
+ 'newsHeadline': 'Cycling - BBC Sport',
+ 'newsText': u"This week's sport on the BBC includes the World Aquatic Championships, England v South Africa in the third Test at The Oval and Challenge Cup semi-finals.",
+ 'newsUrl': 'http://www.bbc.com/sport/cycling'}
+2017-07-24 20:28:20 [root] INFO: Parsing URL: http://www.bbc.com/sport/cricket/40700480
+2017-07-24 20:28:20 [requests.packages.urllib3.connectionpool] INFO: Starting new HTTP connection (1): www.bbc.com
+2017-07-24 20:28:21 [requests.packages.urllib3.connectionpool] DEBUG: "GET /sport/cricket/40700480 HTTP/1.1" 200 29945
+2017-07-24 20:28:21 [readability.readability] DEBUG: Removing unlikely candidate - header#orb-banner>#orb-header.orb-nav-pri.orb-nav-pri-white.b-header--white--black.orb-nav-empty
+2017-07-24 20:28:21 [readability.readability] DEBUG: Branch -18.000 .sp-media-asset__body.media>.sp-media-asset__smp.mp link density 0.000 -> -18.000
+2017-07-24 20:28:21 [readability.readability] DEBUG: Branch  6.000 figure.sp-media-asset.sp-media-asset--lead>.sp-media-asset__body.media link density 0.000 ->  6.000
+2017-07-24 20:28:21 [readability.readability] DEBUG: Branch 158.000 article.component.component--default.story>#story-body.story-body.sp-story-body.gel-body-copy link density 0.036 -> 152.264
+2017-07-24 20:28:21 [readability.readability] DEBUG: Branch 76.500 #responsive-story-page.gel-layout__item.gel-2/3@l>article.component.component--default.story link density 0.140 -> 65.771
+2017-07-24 20:28:21 [readability.readability] DEBUG: Branch -18.000 .sp-media-asset__body.media>.sp-media-asset__smp.mp link density 0.000 -> -18.000
+2017-07-24 20:28:21 [readability.readability] DEBUG: Branch  6.000 figure.sp-media-asset.sp-media-asset--lead>.sp-media-asset__body.media link density 0.000 ->  6.000
+2017-07-24 20:28:21 [readability.readability] DEBUG: Branch -18.000 .sp-media-asset__body.media>.sp-media-asset__smp.mp link density 0.000 -> -18.000
+2017-07-24 20:28:21 [readability.readability] DEBUG: Branch  6.000 figure.sp-media-asset.sp-media-asset--lead>.sp-media-asset__body.media link density 0.000 ->  6.000
+2017-07-24 20:28:21 [readability.readability] DEBUG: Branch -18.000 .sp-media-asset__body.media>.sp-media-asset__smp.mp link density 0.000 -> -18.000
+2017-07-24 20:28:21 [readability.readability] DEBUG: Branch  6.000 figure.sp-media-asset.sp-media-asset--lead>.sp-media-asset__body.media link density 0.000 ->  6.000
+2017-07-24 20:28:21 [readability.readability] DEBUG: Branch -23.000 li.multi-thumb-promo__item>a.multi-thumb-promo__link link density 0.000 -> -23.000
+2017-07-24 20:28:21 [readability.readability] DEBUG: Branch -27.000 ul.multi-thumb-promo__list>li.multi-thumb-promo__item link density 1.000 -> -0.000
+2017-07-24 20:28:21 [readability.readability] DEBUG: Branch -22.000 li.multi-thumb-promo__item>a.multi-thumb-promo__link link density 0.000 -> -22.000
+2017-07-24 20:28:21 [readability.readability] DEBUG: Branch -26.500 ul.multi-thumb-promo__list>li.multi-thumb-promo__item link density 1.000 -> -0.000
+2017-07-24 20:28:21 [readability.readability] DEBUG: Branch -21.000 li.multi-thumb-promo__item>a.multi-thumb-promo__link link density 0.000 -> -21.000
+2017-07-24 20:28:21 [readability.readability] DEBUG: Branch -26.000 ul.multi-thumb-promo__list>li.multi-thumb-promo__item link density 1.000 -> -0.000
+2017-07-24 20:28:21 [readability.readability] DEBUG: Branch -22.000 li.multi-thumb-promo__item>a.multi-thumb-promo__link link density 0.000 -> -22.000
+2017-07-24 20:28:21 [readability.readability] DEBUG: Branch -26.500 ul.multi-thumb-promo__list>li.multi-thumb-promo__item link density 1.000 -> -0.000
+2017-07-24 20:28:21 [readability.readability] DEBUG: Branch -23.000 li.multi-thumb-promo__item>a.multi-thumb-promo__link link density 0.000 -> -23.000
+2017-07-24 20:28:21 [readability.readability] DEBUG: Branch -27.000 ul.multi-thumb-promo__list>li.multi-thumb-promo__item link density 1.000 -> -0.000
+2017-07-24 20:28:21 [readability.readability] INFO: Top 5 : 152.264 article.component.component--default.story>#story-body.story-body.sp-story-body.gel-body-copy
+2017-07-24 20:28:21 [readability.readability] INFO: Top 5 : 65.771 #responsive-story-page.gel-layout__item.gel-2/3@l>article.component.component--default.story
+2017-07-24 20:28:21 [readability.readability] INFO: Top 5 :  6.000 figure.sp-media-asset.sp-media-asset--lead>.sp-media-asset__body.media
+2017-07-24 20:28:21 [readability.readability] INFO: Top 5 :  6.000 figure.sp-media-asset.sp-media-asset--lead>.sp-media-asset__body.media
+2017-07-24 20:28:21 [readability.readability] INFO: Top 5 :  6.000 figure.sp-media-asset.sp-media-asset--lead>.sp-media-asset__body.media
+2017-07-24 20:28:21 [readability.readability] DEBUG: Removed 152.264 #story-body.story-body.sp-story-body.gel-body-copy>ul with weight 0 cause it has too many links 1.000 for its weight 0.
+2017-07-24 20:28:21 [readability.readability] DEBUG: Removed .sp-media-asset__body.media>.sp-media-asset__smp.mp with score -18.000 and weight -25
+2017-07-24 20:28:21 [readability.readability] DEBUG: Removed  0.000 figure.sp-media-asset.sp-media-asset--lead>.sp-media-asset__body.media with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:21 [readability.readability] DEBUG: Removed .sp-media-asset__body.media>.sp-media-asset__image.gel-responsive-image with score  0.000 and weight -25
+2017-07-24 20:28:21 [readability.readability] DEBUG: Removed  0.000 figure.sp-media-asset>.sp-media-asset__body.media with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:21 [readability.readability] DEBUG: Removed .sp-media-asset__body.media>.sp-media-asset__smp.mp with score -18.000 and weight -25
+2017-07-24 20:28:21 [readability.readability] DEBUG: Removed  0.000 figure.sp-media-asset.sp-media-asset--lead>.sp-media-asset__body.media with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:21 [readability.readability] DEBUG: Removed .sp-media-asset__body.media>.sp-media-asset__smp.mp with score -18.000 and weight -25
+2017-07-24 20:28:21 [readability.readability] DEBUG: Removed  0.000 figure.sp-media-asset.sp-media-asset--lead>.sp-media-asset__body.media with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:21 [readability.readability] DEBUG: Removed 152.264 #story-body.story-body.sp-story-body.gel-body-copy>#bbccom_mpu_1_2_3.bbccom_slot with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:21 [readability.readability] DEBUG: Removed .sp-media-asset__body.media>.sp-media-asset__smp.mp with score -18.000 and weight -25
+2017-07-24 20:28:21 [readability.readability] DEBUG: Removed  0.000 figure.sp-media-asset.sp-media-asset--lead>.sp-media-asset__body.media with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:21 [requests.packages.urllib3.connectionpool] INFO: Starting new HTTP connection (1): www.bbc.com
+2017-07-24 20:28:22 [requests.packages.urllib3.connectionpool] DEBUG: "GET /sport/cricket/40700480 HTTP/1.1" 200 29945
+2017-07-24 20:28:23 [scrapy.core.scraper] WARNING: Dropped: 
+{'author': '',
+ 'countriesMentioned': ['British Indian Ocean Territory',
+                        'United States',
+                        'France',
+                        'Australia',
+                        'United Kingdom',
+                        'Ireland',
+                        'Canada',
+                        'Belgium'],
+ 'newsHeadline': "Women's World Cup: England win over India can be 'springboard' for women's cricket - BBC Sport",
+ 'newsText': u'Highlights: Shrubsole inspires England to World Cup glory  England\'s World Cup triumph can be a "springboard" for women\'s cricket around the world, according to captain Heather Knight.  The hosts beat India by nine runs at Lord\'s in front of a sell-out 26,500 crowd, the second biggest in Women\'s World Cup history.__  More than 50 million people worldwide watched the group stages.  "What a tournament it has been - the support, the cricket and everything about it," said Knight.  Anya Shrubsole took 6-46 - the best figures in a World Cup final - as India collapsed from 191-3 to 219 all out in pursuit of England\'s 228-7.  Winning the World Cup is a \'watershed\' moment - England captain Knight  "Women\'s cricket has gone through the roof since 2009," she told BBC Sport.  "This is a watershed moment, to be playing at Lord\'s in front of a sell-out crowd in a World Cup final.  "You just don\'t think those things are going to happen. It\'s unbelievable."  England coach Mark Robinson said: "It has captured the imagination of everybody as the tournament has gone on.  "Hopefully, the women\'s game will go from strength to strength. It is getting the recognition, getting its proper place. People take it seriously and give it respect."  ### \'Anya Shrubsole - what a hero\'  The moment England won the Women\'s World Cup  The superb Shrubsole took five wickets in 19 balls to hasten India\'s collapse, sealing England\'s fourth World Cup title by bowling number 11 Rajeshwari Gayakwad with eight balls to spare.  "Anya Shrubsole, what a hero. I thought about taking her off and I\'m really glad I kept her on," said Knight.  "It\'s been an extraordinary game. To win with some of my best mates, I\'m absolutely delighted."  India needed only 38 runs from 43 balls before Shrubsole dismissed Punam Raut for 86 to spark a collapse of seven wickets for 28 runs.  "One of the great things about this team is we never give up," said Shrubsole. "It is a fitting final of what was a brilliant World Cup.  "There was a huge amount of pressure. It\'s without doubt the most significant spell I\'ve ever bowled."  Former England footballer and Match of the Day host Gary Lineker praised England\'s cricketers  ### \'I\'ve lost my voice\'  Shrubsole and team-mate Tammy Beaumont said they had never experienced such a passionate crowd.  "I\'ve never played in a game where you can\'t hear the person who\'s 15 metres away from you," said Shrubsole.  "Trying to get Heather\'s attention, I was having to scream at her because the crowd made that much noise - pretty much from start to end."  Beaumont, who was named player of the tournament after topping the batting charts with 410 runs, said: "I have lost my voice. I was trying to scream over the crowd.  "It almost felt like half England on one side and India on the other. I don\'t think that atmosphere will be replicated in a number of years."  Knight added: "At times I had to pinch myself and concentrate on the game.  "The noise when we got the last wicket was a really special moment. It was incredible to be part of."  ### India pay price for lower-order \'panic\'  India skipper Mithali Raj said her side "panicked" as they lost seven wickets for 28 runs in the space of seven overs to miss out on a first major trophy.  "There was a time when the match was in the balance. It wasn\'t easy for England but credit to them - they kept their nerve," she said.  "I would like to tell the girls I am very proud of them. They didn\'t make any match look easy for the opposition."  Wicketkeeper Sarah Taylor was one of five England players - along with Knight, Shrubsole, Jenny Gunn and Laura Marsh - who were part of England\'s World Cup- winning squad in 2009.  She returned to the team at this World Cup after taking a break from the game last year to deal with anxiety problems.  "It has been a rollercoaster. To be part of this team is incredible," Taylor said.  "It was a case of getting healthy. It was pot luck to be back for this World Cup. This is amazing."  Watch Goswami\'s three wickets for India against England',
+ 'newsUrl': 'http://www.bbc.com/sport/cricket/40700480'}
+2017-07-24 20:28:23 [root] INFO: Parsing URL: http://www.bbc.com/sport/cycling/40700711
+2017-07-24 20:28:23 [requests.packages.urllib3.connectionpool] INFO: Starting new HTTP connection (1): www.bbc.com
+2017-07-24 20:28:23 [requests.packages.urllib3.connectionpool] DEBUG: "GET /sport/cycling/40700711 HTTP/1.1" 200 29451
+2017-07-24 20:28:23 [readability.readability] DEBUG: Removing unlikely candidate - header#orb-banner>#orb-header.orb-nav-pri.orb-nav-pri-white.b-header--white--black.orb-nav-empty
+2017-07-24 20:28:24 [readability.readability] DEBUG: Branch -18.000 .sp-media-asset__body.media>.sp-media-asset__smp.mp link density 0.000 -> -18.000
+2017-07-24 20:28:24 [readability.readability] DEBUG: Branch  6.000 figure.sp-media-asset.sp-media-asset--lead>.sp-media-asset__body.media link density 0.000 ->  6.000
+2017-07-24 20:28:24 [readability.readability] DEBUG: Branch 137.000 article.component.component--default.story>#story-body.story-body.sp-story-body.gel-body-copy link density 0.136 -> 118.339
+2017-07-24 20:28:24 [readability.readability] DEBUG: Branch 66.000 #responsive-story-page.gel-layout__item.gel-2/3@l>article.component.component--default.story link density 0.220 -> 51.471
+2017-07-24 20:28:24 [readability.readability] DEBUG: Branch 10.000 .media>.media__body link density 0.000 -> 10.000
+2017-07-24 20:28:24 [readability.readability] DEBUG: Branch -17.500 .gel-flag__body>.media link density 0.000 -> -17.500
+2017-07-24 20:28:24 [readability.readability] DEBUG: Branch -23.000 li.multi-thumb-promo__item>a.multi-thumb-promo__link link density 0.000 -> -23.000
+2017-07-24 20:28:24 [readability.readability] DEBUG: Branch -27.000 ul.multi-thumb-promo__list>li.multi-thumb-promo__item link density 1.000 -> -0.000
+2017-07-24 20:28:24 [readability.readability] DEBUG: Branch -19.000 li.multi-thumb-promo__item>a.multi-thumb-promo__link link density 0.000 -> -19.000
+2017-07-24 20:28:24 [readability.readability] DEBUG: Branch -25.000 ul.multi-thumb-promo__list>li.multi-thumb-promo__item link density 1.000 -> -0.000
+2017-07-24 20:28:24 [readability.readability] DEBUG: Branch -22.000 li.multi-thumb-promo__item>a.multi-thumb-promo__link link density 0.000 -> -22.000
+2017-07-24 20:28:24 [readability.readability] DEBUG: Branch -26.500 ul.multi-thumb-promo__list>li.multi-thumb-promo__item link density 1.000 -> -0.000
+2017-07-24 20:28:24 [readability.readability] DEBUG: Branch -21.000 li.multi-thumb-promo__item>a.multi-thumb-promo__link link density 0.000 -> -21.000
+2017-07-24 20:28:24 [readability.readability] DEBUG: Branch -26.000 ul.multi-thumb-promo__list>li.multi-thumb-promo__item link density 1.000 -> -0.000
+2017-07-24 20:28:24 [readability.readability] DEBUG: Branch -23.000 li.multi-thumb-promo__item>a.multi-thumb-promo__link link density 0.000 -> -23.000
+2017-07-24 20:28:24 [readability.readability] DEBUG: Branch -27.000 ul.multi-thumb-promo__list>li.multi-thumb-promo__item link density 1.000 -> -0.000
+2017-07-24 20:28:24 [readability.readability] INFO: Top 5 : 118.339 article.component.component--default.story>#story-body.story-body.sp-story-body.gel-body-copy
+2017-07-24 20:28:24 [readability.readability] INFO: Top 5 : 51.471 #responsive-story-page.gel-layout__item.gel-2/3@l>article.component.component--default.story
+2017-07-24 20:28:24 [readability.readability] INFO: Top 5 : 10.000 .media>.media__body
+2017-07-24 20:28:24 [readability.readability] INFO: Top 5 :  6.000 figure.sp-media-asset.sp-media-asset--lead>.sp-media-asset__body.media
+2017-07-24 20:28:24 [readability.readability] INFO: Top 5 : -0.000 ul.multi-thumb-promo__list>li.multi-thumb-promo__item
+2017-07-24 20:28:24 [readability.readability] DEBUG: Removed 118.339 #story-body.story-body.sp-story-body.gel-body-copy>ul with weight 0 cause it has too many links 1.000 for its weight 0.
+2017-07-24 20:28:24 [readability.readability] DEBUG: Removed 118.339 #story-body.story-body.sp-story-body.gel-body-copy>#bbccom_mpu_1_2_3.bbccom_slot with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:24 [readability.readability] DEBUG: Removed .sp-media-asset__body.media>.sp-media-asset__smp.mp with score -18.000 and weight -25
+2017-07-24 20:28:24 [readability.readability] DEBUG: Removed  0.000 figure.sp-media-asset.sp-media-asset--lead>.sp-media-asset__body.media with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:24 [requests.packages.urllib3.connectionpool] INFO: Starting new HTTP connection (1): www.bbc.com
+2017-07-24 20:28:24 [requests.packages.urllib3.connectionpool] DEBUG: "GET /sport/cycling/40700711 HTTP/1.1" 200 29451
+2017-07-24 20:28:25 [scrapy.core.scraper] WARNING: Dropped: 
+{'author': '',
+ 'countriesMentioned': ['France',
+                        'British Indian Ocean Territory',
+                        'Christmas Island',
+                        'United States',
+                        'Canada'],
+ 'newsHeadline': 'Tour de France 2017: Chris Froome can go on to win more titles - Dave Brailsford - BBC Sport',
+ 'newsText': u'Froome reflects on \'incredible\' fourth Tour win  Four-time Tour de France champion Chris Froome will be a "force" in the race for years to come, says Team Sky principal Dave Brailsford.  Briton Froome, 32, sealed his fourth title and third in succession on Sunday\'s final stage in Paris.  The record for most Tour titles won is five, held by Jacques Anquetil, Eddy Merckx, Bernard Hinault and Miguel Indurain.  "Chris can go on - there\'s no reason to think that he can\'t," said Brailsford.  "Physically he\'s got what it takes and I don\'t think that\'s going to diminish in the next year or so."  Brailsford added that Froome\'s chances of winning more Tour titles were a question of "hunger and mentality" and that the Team Sky rider was "as hungry as ever".  "He\'s getting better tactically and technically, so as long as that hunger continues and he keeps his health, then he\'ll be a force in this race for a good couple of seasons to come," Brailsford told ITV4.  ### \'It\'s not a popularity contest\'  In the three previous years in which he won the Tour - 2013, 2015 and 2016 - Froome has never finished higher than sixth in voting for the BBC\'s Sports Personality of the Year, failing to make 16-strong shortlist last year.  Froome was jeered by some fans during this year\'s Tour and claimed he had urine thrown at him in the 2015 race.  "I don\'t think it\'s a popularity contest," said Brailsford.  "You\'ve got to look at the sporting achievement and Chris is right up there with the greats now, there is no denying it.  "He\'ll be thinking about the respect amongst his peers in terms of what he\'s achieved and how he\'s achieved it and he\'s got the utmost respect from them.  "He deserves all the accolades he gets and I\'m proud of Chris Froome - he\'s a great ambassador for the sport and a great ambassador for Team Sky and I\'m sure a lot of people think the same."  Team Sky have now won five of the past six Tours following Sir Bradley Wiggins\' victory in 2012.  "This is the greatest victory I\'ve been involved in and definitely the most satisfying," Brailsford told BBC Radio 5 live.  ### \'Our friendliest Tour\'  Both Wiggins and Froome have been subject to scrutiny and asked questions about doping at times during their Tour wins.  Since Froome\'s third Tour win in 2016, there has also been more widespread criticism of Team Sky and their principal Brailsford.  The former performance director of British Cycling has been questioned over the contents of a medical package sent to Wiggins at the Criterium du Dauphine in 2011 and the team criticised for the use of therapeutic use exemptions.  Brailsford also apologised for a "foul-mouthed exchange" with a reporter during this year\'s Tour.  However, Brailsford claimed that this year\'s race had been his team\'s "friendliest" Tour de France.  "What has been interesting is there have been no difficult questions coming Chris Froome\'s way this year, there have been no challenges like we\'ve had in other years," he added.  "In that sense I think that\'s a really good sign where we\'re at as a sport and where he\'s at."',
+ 'newsUrl': 'http://www.bbc.com/sport/cycling/40700711'}
+2017-07-24 20:28:25 [root] INFO: Parsing URL: http://www.bbc.com/sport/cricket/womens
+2017-07-24 20:28:25 [requests.packages.urllib3.connectionpool] INFO: Starting new HTTP connection (1): www.bbc.com
+2017-07-24 20:28:25 [requests.packages.urllib3.connectionpool] DEBUG: "GET /sport/cricket/womens HTTP/1.1" 200 31746
+2017-07-24 20:28:26 [readability.readability] DEBUG: Removing unlikely candidate - header#orb-banner>#orb-header.orb-nav-pri.orb-nav-pri-white.b-header--white--black.orb-nav-empty
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 33.000 .lakeside__body>.lakeside__content link density 0.414 -> 19.329
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 31.500 article.clearfix.faux-block-link.lakeside.lakeside--reverse.lakeside--lead.lakeside--has-media>.lakeside__body link density 0.401 -> 18.871
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 34.000 .lakeside__body>.lakeside__content link density 0.259 -> 25.200
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 32.000 article.clearfix.faux-block-link.lakeside.lakeside--auto.lakeside--has-media>.lakeside__body link density 0.249 -> 24.045
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 33.000 .lakeside__body>.lakeside__content link density 0.289 -> 23.462
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 31.500 article.clearfix.faux-block-link.lakeside.lakeside--auto.lakeside--has-media>.lakeside__body link density 0.278 -> 22.750
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 34.000 .lakeside__body>.lakeside__content link density 0.303 -> 23.691
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 32.000 article.clearfix.faux-block-link.lakeside.lakeside--auto.lakeside--has-media>.lakeside__body link density 0.292 -> 22.646
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch -1.000 ul#manual-stats-accordion.accordion.manual-stats-link_list>li.manual-stats-link__item link density 0.387 -> -0.613
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch -2.000 .layout--bleed-right-wide__inner>ul#manual-stats-accordion.accordion.manual-stats-link_list link density 0.607 -> -0.787
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch  2.000 li>a.accordion__item.manual-stats-link__item link density 0.000 ->  2.000
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch -2.000 ul#manual-stats-accordion.accordion.manual-stats-link_list>li link density 0.988 -> -0.024
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 32.000 .lakeside__body>.lakeside__content link density 0.320 -> 21.770
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 31.000 article.clearfix.faux-block-link.lakeside.lakeside--stacked.lakeside--has-media>.lakeside__body link density 0.320 -> 21.090
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 33.000 .lakeside__body>.lakeside__content link density 0.203 -> 26.311
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 31.500 article.clearfix.faux-block-link.lakeside.lakeside--has-media>.lakeside__body link density 0.214 -> 24.763
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 33.000 .lakeside__body>.lakeside__content link density 0.351 -> 21.415
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 31.500 article.clearfix.faux-block-link.lakeside.lakeside--has-media>.lakeside__body link density 0.367 -> 19.955
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 33.000 .lakeside__body>.lakeside__content link density 0.242 -> 25.020
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 31.500 article.clearfix.faux-block-link.lakeside.lakeside--has-media>.lakeside__body link density 0.247 -> 23.713
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 33.000 .lakeside__body>.lakeside__content link density 0.317 -> 22.547
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 31.500 article.clearfix.faux-block-link.lakeside.lakeside--has-media>.lakeside__body link density 0.312 -> 21.677
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 34.000 .lakeside__body>.lakeside__content link density 0.234 -> 26.047
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 32.000 article.clearfix.faux-block-link.lakeside.lakeside--has-media>.lakeside__body link density 0.270 -> 23.373
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 35.000 .lakeside__body>.lakeside__content link density 0.206 -> 27.778
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 32.500 article.clearfix.faux-block-link.lakeside.lakeside--has-media>.lakeside__body link density 0.233 -> 24.932
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 34.000 .lakeside__body>.lakeside__content link density 0.232 -> 26.116
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 32.000 article.clearfix.faux-block-link.lakeside.lakeside--has-media>.lakeside__body link density 0.232 -> 24.580
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 33.000 .lakeside__body>.lakeside__content link density 0.140 -> 28.368
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 31.500 article.clearfix.faux-block-link.lakeside.lakeside--has-media>.lakeside__body link density 0.140 -> 27.079
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch -22.000 li.multi-thumb-promo__item>a.multi-thumb-promo__link link density 0.000 -> -22.000
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch -26.500 ul.multi-thumb-promo__list>li.multi-thumb-promo__item link density 1.000 -> -0.000
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch -22.000 li.multi-thumb-promo__item>a.multi-thumb-promo__link link density 0.000 -> -22.000
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch -26.500 ul.multi-thumb-promo__list>li.multi-thumb-promo__item link density 1.000 -> -0.000
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch -19.000 li.multi-thumb-promo__item>a.multi-thumb-promo__link link density 0.000 -> -19.000
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch -25.000 ul.multi-thumb-promo__list>li.multi-thumb-promo__item link density 1.000 -> -0.000
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch -23.000 li.multi-thumb-promo__item>a.multi-thumb-promo__link link density 0.000 -> -23.000
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch -27.000 ul.multi-thumb-promo__list>li.multi-thumb-promo__item link density 1.000 -> -0.000
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch -22.000 li.multi-thumb-promo__item>a.multi-thumb-promo__link link density 0.000 -> -22.000
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch -26.500 ul.multi-thumb-promo__list>li.multi-thumb-promo__item link density 1.000 -> -0.000
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch -23.000 li.multi-thumb-promo__item>a.multi-thumb-promo__link link density 0.000 -> -23.000
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch -27.000 ul.multi-thumb-promo__list>li.multi-thumb-promo__item link density 1.000 -> -0.000
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 32.000 article.aintree__item.clearfix.faux-block-link.gel-long-primer>.aintree_article-body link density 0.987 ->  0.416
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch  1.000 .gel-layout__item.gel-1/2@xs.gel-1/3@m.gel-1/4@l.gel-1/3@xxl>article.aintree__item.clearfix.faux-block-link.gel-long-primer link density 0.987 ->  0.013
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 32.000 article.aintree__item.clearfix.faux-block-link.gel-long-primer>.aintree_article-body link density 0.979 ->  0.667
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch  1.000 .gel-layout__item.gel-1/2@xs.gel-1/3@m.gel-1/4@l.gel-1/3@xxl>article.aintree__item.clearfix.faux-block-link.gel-long-primer link density 0.980 ->  0.020
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 32.000 article.aintree__item.clearfix.faux-block-link.gel-long-primer>.aintree_article-body link density 0.989 ->  0.337
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch  1.000 .gel-layout__item.gel-1/2@xs.gel-1/3@m.gel-1/4@l.gel-1/3@xxl>article.aintree__item.clearfix.faux-block-link.gel-long-primer link density 0.990 ->  0.010
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 32.000 article.aintree__item.clearfix.faux-block-link.gel-long-primer>.aintree_article-body link density 0.984 ->  0.516
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch  1.000 .gel-layout__item.gel-1/2@xs.gel-1/3@m.gel-1/4@l.gel-1/3@xxl>article.aintree__item.clearfix.faux-block-link.gel-long-primer link density 0.984 ->  0.016
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 32.000 article.aintree__item.clearfix.faux-block-link.gel-long-primer>.aintree_article-body link density 0.980 ->  0.640
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch  1.000 .gel-layout__item.gel-1/2@xs.gel-1/3@m.gel-1/4@l.gel-1/3@xxl>article.aintree__item.clearfix.faux-block-link.gel-long-primer link density 0.980 ->  0.020
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 33.000 article.aintree__item.clearfix.faux-block-link.gel-long-primer>.aintree_article-body link density 0.976 ->  0.805
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch  1.500 .gel-layout__item.gel-1/2@xs.gel-1/3@m.gel-1/4@l.gel-1/3@xxl>article.aintree__item.clearfix.faux-block-link.gel-long-primer link density 0.978 ->  0.034
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 32.000 article.aintree__item.clearfix.faux-block-link.gel-long-primer>.aintree_article-body link density 0.978 ->  0.696
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch  1.000 .gel-layout__item.gel-1/2@xs.gel-1/3@m.gel-1/4@l.gel-1/3@xxl>article.aintree__item.clearfix.faux-block-link.gel-long-primer link density 0.980 ->  0.020
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 32.000 article.aintree__item.clearfix.faux-block-link.gel-long-primer>.aintree_article-body link density 0.977 ->  0.744
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch  1.000 .gel-layout__item.gel-1/2@xs.gel-1/3@m.gel-1/4@l.gel-1/3@xxl>article.aintree__item.clearfix.faux-block-link.gel-long-primer link density 0.978 ->  0.022
+2017-07-24 20:28:26 [readability.readability] INFO: Top 5 : 28.368 .lakeside__body>.lakeside__content
+2017-07-24 20:28:26 [readability.readability] INFO: Top 5 : 27.778 .lakeside__body>.lakeside__content
+2017-07-24 20:28:26 [readability.readability] INFO: Top 5 : 27.079 article.clearfix.faux-block-link.lakeside.lakeside--has-media>.lakeside__body
+2017-07-24 20:28:26 [readability.readability] INFO: Top 5 : 26.311 .lakeside__body>.lakeside__content
+2017-07-24 20:28:26 [readability.readability] INFO: Top 5 : 26.116 .lakeside__body>.lakeside__content
+2017-07-24 20:28:26 [readability.readability] DEBUG: Not removing div{01}>.lakeside__content of length 97:  All the latest podcasts, clips and quiz...
+2017-07-24 20:28:26 [readability.readability] DEBUG: Not removing body>div{01} of length 97:  All the latest podcasts, clips and quiz...
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch -1.000 .orb-nav-section.orb-nav-search>form#orb-search-form.b-f link density 0.000 -> -1.000
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch  6.000 .orb-nav-pri-container.b-r.b-g-p>.orb-nav-section.orb-nav-search link density 0.167 ->  5.000
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 33.000 .lakeside__body>.lakeside__content link density 0.414 -> 19.329
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 31.500 article.clearfix.faux-block-link.lakeside.lakeside--reverse.lakeside--lead.lakeside--has-media>.lakeside__body link density 0.401 -> 18.871
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 34.000 .lakeside__body>.lakeside__content link density 0.259 -> 25.200
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 32.000 article.clearfix.faux-block-link.lakeside.lakeside--auto.lakeside--has-media>.lakeside__body link density 0.249 -> 24.045
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 33.000 .lakeside__body>.lakeside__content link density 0.289 -> 23.462
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 31.500 article.clearfix.faux-block-link.lakeside.lakeside--auto.lakeside--has-media>.lakeside__body link density 0.278 -> 22.750
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 34.000 .lakeside__body>.lakeside__content link density 0.303 -> 23.691
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 32.000 article.clearfix.faux-block-link.lakeside.lakeside--auto.lakeside--has-media>.lakeside__body link density 0.292 -> 22.646
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch -1.000 ul#manual-stats-accordion.accordion.manual-stats-link_list>li.manual-stats-link__item link density 0.387 -> -0.613
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch -2.000 .layout--bleed-right-wide__inner>ul#manual-stats-accordion.accordion.manual-stats-link_list link density 0.607 -> -0.787
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch  2.000 li>a.accordion__item.manual-stats-link__item link density 0.000 ->  2.000
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch -2.000 ul#manual-stats-accordion.accordion.manual-stats-link_list>li link density 0.988 -> -0.024
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 32.000 .lakeside__body>.lakeside__content link density 0.320 -> 21.770
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 31.000 article.clearfix.faux-block-link.lakeside.lakeside--stacked.lakeside--has-media>.lakeside__body link density 0.320 -> 21.090
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 33.000 .lakeside__body>.lakeside__content link density 0.203 -> 26.311
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 31.500 article.clearfix.faux-block-link.lakeside.lakeside--has-media>.lakeside__body link density 0.214 -> 24.763
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 33.000 .lakeside__body>.lakeside__content link density 0.351 -> 21.415
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 31.500 article.clearfix.faux-block-link.lakeside.lakeside--has-media>.lakeside__body link density 0.367 -> 19.955
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 33.000 .lakeside__body>.lakeside__content link density 0.242 -> 25.020
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 31.500 article.clearfix.faux-block-link.lakeside.lakeside--has-media>.lakeside__body link density 0.247 -> 23.713
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 33.000 .lakeside__body>.lakeside__content link density 0.317 -> 22.547
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 31.500 article.clearfix.faux-block-link.lakeside.lakeside--has-media>.lakeside__body link density 0.312 -> 21.677
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 34.000 .lakeside__body>.lakeside__content link density 0.234 -> 26.047
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 32.000 article.clearfix.faux-block-link.lakeside.lakeside--has-media>.lakeside__body link density 0.270 -> 23.373
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 35.000 .lakeside__body>.lakeside__content link density 0.206 -> 27.778
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 32.500 article.clearfix.faux-block-link.lakeside.lakeside--has-media>.lakeside__body link density 0.233 -> 24.932
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 34.000 .lakeside__body>.lakeside__content link density 0.232 -> 26.116
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 32.000 article.clearfix.faux-block-link.lakeside.lakeside--has-media>.lakeside__body link density 0.232 -> 24.580
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 33.000 .lakeside__body>.lakeside__content link density 0.140 -> 28.368
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 31.500 article.clearfix.faux-block-link.lakeside.lakeside--has-media>.lakeside__body link density 0.140 -> 27.079
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch -22.000 li.multi-thumb-promo__item>a.multi-thumb-promo__link link density 0.000 -> -22.000
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch -26.500 ul.multi-thumb-promo__list>li.multi-thumb-promo__item link density 1.000 -> -0.000
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch -22.000 li.multi-thumb-promo__item>a.multi-thumb-promo__link link density 0.000 -> -22.000
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch -26.500 ul.multi-thumb-promo__list>li.multi-thumb-promo__item link density 1.000 -> -0.000
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch -19.000 li.multi-thumb-promo__item>a.multi-thumb-promo__link link density 0.000 -> -19.000
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch -25.000 ul.multi-thumb-promo__list>li.multi-thumb-promo__item link density 1.000 -> -0.000
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch -23.000 li.multi-thumb-promo__item>a.multi-thumb-promo__link link density 0.000 -> -23.000
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch -27.000 ul.multi-thumb-promo__list>li.multi-thumb-promo__item link density 1.000 -> -0.000
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch -22.000 li.multi-thumb-promo__item>a.multi-thumb-promo__link link density 0.000 -> -22.000
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch -26.500 ul.multi-thumb-promo__list>li.multi-thumb-promo__item link density 1.000 -> -0.000
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch -23.000 li.multi-thumb-promo__item>a.multi-thumb-promo__link link density 0.000 -> -23.000
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch -27.000 ul.multi-thumb-promo__list>li.multi-thumb-promo__item link density 1.000 -> -0.000
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 32.000 article.aintree__item.clearfix.faux-block-link.gel-long-primer>.aintree_article-body link density 0.987 ->  0.416
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch  1.000 .gel-layout__item.gel-1/2@xs.gel-1/3@m.gel-1/4@l.gel-1/3@xxl>article.aintree__item.clearfix.faux-block-link.gel-long-primer link density 0.987 ->  0.013
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 32.000 article.aintree__item.clearfix.faux-block-link.gel-long-primer>.aintree_article-body link density 0.979 ->  0.667
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch  1.000 .gel-layout__item.gel-1/2@xs.gel-1/3@m.gel-1/4@l.gel-1/3@xxl>article.aintree__item.clearfix.faux-block-link.gel-long-primer link density 0.980 ->  0.020
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 32.000 article.aintree__item.clearfix.faux-block-link.gel-long-primer>.aintree_article-body link density 0.989 ->  0.337
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch  1.000 .gel-layout__item.gel-1/2@xs.gel-1/3@m.gel-1/4@l.gel-1/3@xxl>article.aintree__item.clearfix.faux-block-link.gel-long-primer link density 0.990 ->  0.010
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 32.000 article.aintree__item.clearfix.faux-block-link.gel-long-primer>.aintree_article-body link density 0.984 ->  0.516
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch  1.000 .gel-layout__item.gel-1/2@xs.gel-1/3@m.gel-1/4@l.gel-1/3@xxl>article.aintree__item.clearfix.faux-block-link.gel-long-primer link density 0.984 ->  0.016
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 32.000 article.aintree__item.clearfix.faux-block-link.gel-long-primer>.aintree_article-body link density 0.980 ->  0.640
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch  1.000 .gel-layout__item.gel-1/2@xs.gel-1/3@m.gel-1/4@l.gel-1/3@xxl>article.aintree__item.clearfix.faux-block-link.gel-long-primer link density 0.980 ->  0.020
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 33.000 article.aintree__item.clearfix.faux-block-link.gel-long-primer>.aintree_article-body link density 0.976 ->  0.805
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch  1.500 .gel-layout__item.gel-1/2@xs.gel-1/3@m.gel-1/4@l.gel-1/3@xxl>article.aintree__item.clearfix.faux-block-link.gel-long-primer link density 0.978 ->  0.034
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 32.000 article.aintree__item.clearfix.faux-block-link.gel-long-primer>.aintree_article-body link density 0.978 ->  0.696
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch  1.000 .gel-layout__item.gel-1/2@xs.gel-1/3@m.gel-1/4@l.gel-1/3@xxl>article.aintree__item.clearfix.faux-block-link.gel-long-primer link density 0.980 ->  0.020
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch 32.000 article.aintree__item.clearfix.faux-block-link.gel-long-primer>.aintree_article-body link density 0.977 ->  0.744
+2017-07-24 20:28:26 [readability.readability] DEBUG: Branch  1.000 .gel-layout__item.gel-1/2@xs.gel-1/3@m.gel-1/4@l.gel-1/3@xxl>article.aintree__item.clearfix.faux-block-link.gel-long-primer link density 0.978 ->  0.022
+2017-07-24 20:28:26 [readability.readability] INFO: Top 5 : 28.368 .lakeside__body>.lakeside__content
+2017-07-24 20:28:26 [readability.readability] INFO: Top 5 : 27.778 .lakeside__body>.lakeside__content
+2017-07-24 20:28:26 [readability.readability] INFO: Top 5 : 27.079 article.clearfix.faux-block-link.lakeside.lakeside--has-media>.lakeside__body
+2017-07-24 20:28:26 [readability.readability] INFO: Top 5 : 26.311 .lakeside__body>.lakeside__content
+2017-07-24 20:28:26 [readability.readability] INFO: Top 5 : 26.116 .lakeside__body>.lakeside__content
+2017-07-24 20:28:26 [readability.readability] DEBUG: Not removing div{01}>.lakeside__content of length 97:  All the latest podcasts, clips and quiz...
+2017-07-24 20:28:26 [readability.readability] DEBUG: Not removing body>div{01} of length 97:  All the latest podcasts, clips and quiz...
+2017-07-24 20:28:26 [requests.packages.urllib3.connectionpool] INFO: Starting new HTTP connection (1): www.bbc.com
+2017-07-24 20:28:26 [requests.packages.urllib3.connectionpool] DEBUG: "GET /sport/cricket/womens HTTP/1.1" 200 31746
+2017-07-24 20:28:27 [scrapy.core.scraper] WARNING: Dropped: 
+{'author': '',
+ 'countriesMentioned': [],
+ 'newsHeadline': "Women's Cricket - BBC Sport",
+ 'newsText': u"All the latest podcasts, clips and quizzes from BBC World Service's weekly cricket magazine show.",
+ 'newsUrl': 'http://www.bbc.com/sport/cricket/womens'}
+2017-07-24 20:28:27 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET http://www.bbc.com/usingthebbc/cookies/> from <GET http://www.bbc.com/privacy/cookies/about>
+2017-07-24 20:28:27 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.bbc.com/privacy/> (referer: http://www.bbc.com/)
+2017-07-24 20:28:27 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.bbc.com/weather/1275339?day=1> (referer: http://www.bbc.com/)
+2017-07-24 20:28:27 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET http://www.bbc.co.uk/aboutthebbc/> from <GET http://www.bbc.com/aboutthebbc/>
+2017-07-24 20:28:27 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.bbc.com/weather/1275339?day=3> (referer: http://www.bbc.com/)
+2017-07-24 20:28:27 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.bbc.com/terms/> (referer: http://www.bbc.com/)
+2017-07-24 20:28:27 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.bbc.com/weather/1275339?day=2> (referer: http://www.bbc.com/)
+2017-07-24 20:28:27 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.bbc.com/weather/1275339?day=0> (referer: http://www.bbc.com/)
+2017-07-24 20:28:27 [root] INFO: Parsing URL: http://www.bbc.com/weather/1275339?day=1
+2017-07-24 20:28:27 [requests.packages.urllib3.connectionpool] INFO: Starting new HTTP connection (1): www.bbc.com
+2017-07-24 20:28:28 [requests.packages.urllib3.connectionpool] DEBUG: "GET /weather/1275339?day=1 HTTP/1.1" 200 438859
+2017-07-24 20:28:30 [readability.readability] DEBUG: Removing unlikely candidate - #blq-content>#bbccom_sponsor_section_1_2_3_4.bbccom_slot
+2017-07-24 20:28:30 [readability.readability] DEBUG: Removing unlikely candidate - #bbccom_sponsor_section_1_2_3_4.bbccom_slot>#bbccom_sponsor_section.bbccom_advert.bbccom_display_none
+2017-07-24 20:28:30 [readability.readability] DEBUG: Removing unlikely candidate - #bbccom_sponsor_section.bbccom_advert.bbccom_display_none>#bbccom_sponsor_section_text
+2017-07-24 20:28:30 [readability.readability] DEBUG: Removing unlikely candidate - #bbccom_sponsor_section.bbccom_advert.bbccom_display_none>#bbccom_sponsor_section_image
+2017-07-24 20:28:30 [readability.readability] DEBUG: Branch  8.000 noscript>#blq-no-js-banner link density 0.183 ->  6.533
+2017-07-24 20:28:30 [readability.readability] DEBUG: Branch  1.500 #blq-global>noscript link density 0.183 ->  1.225
+2017-07-24 20:28:30 [readability.readability] DEBUG: Branch  7.000 .hourly>#hourly.day-1.dataview.fixed-window link density 0.000 ->  7.000
+2017-07-24 20:28:30 [readability.readability] DEBUG: Branch  6.000 .inner>.hourly link density 0.000 ->  6.000
+2017-07-24 20:28:30 [readability.readability] DEBUG: Branch  7.000 .environmental-column>#environmental-summary.environmental link density 0.000 ->  7.000
+2017-07-24 20:28:30 [readability.readability] DEBUG: Branch  6.000 .regional-summary>.environmental-column link density 0.000 ->  6.000
+2017-07-24 20:28:30 [readability.readability] DEBUG: Branch  8.000 .wr-forecast-video.gel-minion-bold>div{01} link density 0.000 ->  8.000
+2017-07-24 20:28:30 [readability.readability] DEBUG: Branch  6.500 #u9493017951026559>.wr-forecast-video.gel-minion-bold link density 0.000 ->  6.500
+2017-07-24 20:28:30 [readability.readability] DEBUG: Branch 11.000 .column-sidebar>.observations.module link density 0.000 -> 11.000
+2017-07-24 20:28:30 [readability.readability] DEBUG: Branch -18.500 .columns>.column-sidebar link density 0.095 -> -16.748
+2017-07-24 20:28:30 [readability.readability] DEBUG: Branch  8.500 .observations.module>.observationsRecord link density 0.000 ->  8.500
+2017-07-24 20:28:30 [readability.readability] DEBUG: Branch  8.000 .observationsRecord>.hpv link density 0.000 ->  8.000
+2017-07-24 20:28:30 [readability.readability] DEBUG: Branch  9.000 .observations.module>.station-data link density 0.000 ->  9.000
+2017-07-24 20:28:30 [readability.readability] DEBUG: Branch 12.000 #blq-content>.ack link density 0.073 -> 11.125
+2017-07-24 20:28:30 [readability.readability] DEBUG: Branch 33.500 #blq-main.blq-clearfix>#blq-content link density 0.338 -> 22.193
+2017-07-24 20:28:30 [readability.readability] DEBUG: Branch -15.000 #blq-container-inner>#blq-foot.blq-rst.blq-clearfix.blq-foot-transparent.blq-foot-text-dark link density 0.353 -> -9.707
+2017-07-24 20:28:30 [readability.readability] DEBUG: Branch  6.000 #blq-container.blq-lang-en.blq-dotcom>#blq-container-inner link density 0.339 ->  3.964
+2017-07-24 20:28:30 [readability.readability] DEBUG: Branch 11.000 #blq-foot.blq-rst.blq-clearfix.blq-foot-transparent.blq-foot-text-dark>#blq-obit link density 0.000 -> 11.000
+2017-07-24 20:28:30 [readability.readability] DEBUG: Branch  2.000 tbody>tr.day link density 0.000 ->  2.000
+2017-07-24 20:28:30 [readability.readability] DEBUG: Branch  5.000 table.forecast.daily-forecast>tbody link density 0.000 ->  5.000
+2017-07-24 20:28:30 [readability.readability] DEBUG: Branch  2.000 tbody>tr.day link density 0.000 ->  2.000
+2017-07-24 20:28:30 [readability.readability] DEBUG: Branch  2.000 tbody>tr.day link density 0.000 ->  2.000
+2017-07-24 20:28:30 [readability.readability] DEBUG: Branch  2.000 tbody>tr.day link density 0.000 ->  2.000
+2017-07-24 20:28:30 [readability.readability] DEBUG: Branch  2.000 tbody>tr.day link density 0.000 ->  2.000
+2017-07-24 20:28:30 [readability.readability] DEBUG: Branch 16.000 tbody>tr.windspeed link density 0.000 -> 16.000
+2017-07-24 20:28:30 [readability.readability] DEBUG: Branch  8.000 table.weather.fixed-window.three-hourly-8.one-hourly-0>tbody link density 0.000 ->  8.000
+2017-07-24 20:28:30 [readability.readability] INFO: Top 5 : 22.193 #blq-main.blq-clearfix>#blq-content
+2017-07-24 20:28:30 [readability.readability] INFO: Top 5 : 16.000 tbody>tr.windspeed
+2017-07-24 20:28:30 [readability.readability] INFO: Top 5 : 11.125 #blq-content>.ack
+2017-07-24 20:28:30 [readability.readability] INFO: Top 5 : 11.000 .column-sidebar>.observations.module
+2017-07-24 20:28:30 [readability.readability] INFO: Top 5 : 11.000 #blq-foot.blq-rst.blq-clearfix.blq-foot-transparent.blq-foot-text-dark>#blq-obit
+2017-07-24 20:28:30 [readability.readability] DEBUG: Not removing #forecast-data-table.off-screen>table.forecast.daily-forecast of length 573:  Daily forecast Day Weather Maximum Day ...
+2017-07-24 20:28:30 [readability.readability] DEBUG: Removed  0.000 .about-links.column>ul with weight 0 cause it has too many links 0.950 for its weight 0.
+2017-07-24 20:28:30 [readability.readability] DEBUG: Removed  0.000 .elsewhere-links.column>ul with weight 0 cause it has too many links 0.977 for its weight 0.
+2017-07-24 20:28:30 [readability.readability] DEBUG: Removed  0.000 .internal-links.column>ul with weight 0 cause it has too many links 0.963 for its weight 0.
+2017-07-24 20:28:30 [readability.readability] DEBUG: Removed  0.000 .rss-panel>ul with weight 0 cause it has too short content length 24 without a single image.
+2017-07-24 20:28:30 [readability.readability] DEBUG: Removed  0.000 .tabbed-forecast>ul#all-daily-tabs with weight 0 cause it has too many links 0.987 for its weight 0.
+2017-07-24 20:28:30 [readability.readability] DEBUG: Removed  0.000 .daily-window>ul.daily with weight 0 cause it has too many links 0.989 for its weight 0.
+2017-07-24 20:28:30 [readability.readability] DEBUG: Removed  0.000 .language-picker>ul with weight 0 cause it has too many links 0.697 for its weight 0.
+2017-07-24 20:28:30 [readability.readability] DEBUG: Removed  0.000 #unit-picker>ul.wind.unit-options with weight 0 cause it has too short content length 8 without a single image.
+2017-07-24 20:28:30 [readability.readability] DEBUG: Removed  0.000 #unit-picker>ul.temp.unit-options with weight 0 cause it has too short content length 7 without a single image.
+2017-07-24 20:28:30 [readability.readability] DEBUG: Not removing #blq-content>.ack of length 192:  BBC Weather in association with the Met...
+2017-07-24 20:28:30 [readability.readability] DEBUG: Removed  0.000 #related-links>.about-links.column with weight 0 cause it has too short content length 17 without a single image.
+2017-07-24 20:28:30 [readability.readability] DEBUG: Removed  0.000 #related-links>.elsewhere-links.column with weight 0 cause it has too short content length 9 without a single image.
+2017-07-24 20:28:30 [readability.readability] DEBUG: Removed  0.000 #related-links>.internal-links.column with weight 0 cause it has too short content length 13 without a single image.
+2017-07-24 20:28:30 [readability.readability] DEBUG: Removed #blq-content>#related-links with score  0.000 and weight -25
+2017-07-24 20:28:30 [readability.readability] DEBUG: Not removing .observations.module>.station-data of length 71:  Observation station: MUMBAI INTERNATION...
+2017-07-24 20:28:30 [readability.readability] DEBUG: Not removing .observationsRecord>.hpv of length 58:  Humidity: 78% Visibility: Poor Pressure...
+2017-07-24 20:28:30 [readability.readability] DEBUG: Not removing .observations.module>.observationsRecord of length 115:  29Â°C 84Â°F Wind Speed 14 km/h 9 mph We...
+2017-07-24 20:28:30 [readability.readability] DEBUG: Not removing .column-sidebar>.observations.module of length 234:  Observations Observed at 18:30, Monday ...
+2017-07-24 20:28:30 [readability.readability] DEBUG: Not removing div{01}>.wr-cs-article__media-asset of length 61: Please turn on JavaScript. Media require...
+2017-07-24 20:28:30 [readability.readability] DEBUG: Not removing .wr-forecast-video.gel-minion-bold>div{01} of length 98: Please turn on JavaScript. Media require...
+2017-07-24 20:28:30 [readability.readability] DEBUG: Not removing #u9493017951026559>.wr-forecast-video.gel-minion-bold of length 98: Please turn on JavaScript. Media require...
+2017-07-24 20:28:30 [readability.readability] DEBUG: Not removing #forecast-video>#u9493017951026559 of length 98: Please turn on JavaScript. Media require...
+2017-07-24 20:28:30 [readability.readability] DEBUG: Not removing .video>#forecast-video of length 98: Please turn on JavaScript. Media require...
+2017-07-24 20:28:30 [readability.readability] DEBUG: Not removing .forecast-videos.forecast-videos--morph.module>.video of length 98:  Please turn on JavaScript. Media requir...
+2017-07-24 20:28:30 [readability.readability] DEBUG: Not removing .column-sidebar>.forecast-videos.forecast-videos--morph.module of length 136:  South and Central Asia Forecast Video P...
+2017-07-24 20:28:30 [readability.readability] DEBUG: Removed  0.000 .rss>.rss-panel with weight 0 cause it has too short content length 9 without a single image.
+2017-07-24 20:28:30 [readability.readability] DEBUG: Removed  0.000 .pagetools.blq-clearfix>.rss with weight 0 cause it has too short content length 9 without a single image.
+2017-07-24 20:28:30 [readability.readability] DEBUG: Removed  0.000 .pagetools.blq-clearfix>.bbc-st.bbc-st-slim.bbc-st-colour with weight 0 cause it has too short content length 15 without a single image.
+2017-07-24 20:28:30 [readability.readability] DEBUG: Removed -16.748 .column-sidebar>.pagetools.blq-clearfix with weight 0 cause it has too short content length 21 without a single image.
+2017-07-24 20:28:30 [readability.readability] DEBUG: Removed .columns>.column-sidebar with score -16.748 and weight -25
+2017-07-24 20:28:30 [readability.readability] DEBUG: Removed  0.000 #maps.forecast-maps-wrapper>.script-templates with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:30 [readability.readability] DEBUG: Removed  0.000 .column-main>#maps.forecast-maps-wrapper with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:30 [readability.readability] DEBUG: Not removing .environmental-column>#environmental-summary.environmental of length 27:  UV: 7 European range: 1-11+ 
+2017-07-24 20:28:30 [readability.readability] DEBUG: Not removing .regional-summary>.environmental-column of length 49:  Environmental Summary UV: 7 European ra...
+2017-07-24 20:28:30 [readability.readability] DEBUG: Not removing .column-main>.regional-summary of length 49:  Environmental Summary UV: 7 European ra...
+2017-07-24 20:28:30 [readability.readability] DEBUG: Not removing .columns>.column-main of length 49:  Environmental Summary UV: 7 European ra...
+2017-07-24 20:28:30 [readability.readability] DEBUG: Not removing #blq-content>.columns of length 49:  Environmental Summary UV: 7 European ra...
+2017-07-24 20:28:30 [readability.readability] DEBUG: Not removing #hourly.day-1.dataview.fixed-window>.detail-container.group of length 30:  Last updated 18:43 Graph Table 
+2017-07-24 20:28:30 [readability.readability] DEBUG: Removed  0.000 .tabbed-forecast>.daily-window with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:30 [readability.readability] DEBUG: Removed  0.000 .tabbed-forecast>.forecast-options with weight 0 cause it has too many links 0.966 for its weight 0.
+2017-07-24 20:28:30 [readability.readability] DEBUG: Removed 22.193 #blq-content>#bbccom_mpu_1_2_3_4.bbccom_slot with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:30 [readability.readability] DEBUG: Not removing #blq-content>#forecast-data-table.off-screen of length 573:  Daily forecast Day Weather Maximum Day ...
+2017-07-24 20:28:30 [readability.readability] DEBUG: Not removing #find-a-forecast>#favourites of length 71:  Favourite Locations (—) You need javasc...
+2017-07-24 20:28:30 [readability.readability] DEBUG: Removed  0.000 .locator-component>#locator-search-default.locator-search with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:30 [readability.readability] DEBUG: Removed  0.000 .locator-weather>.locator-component with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:30 [readability.readability] DEBUG: Removed  0.000 #find-a-forecast>.locator-weather with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:30 [readability.readability] DEBUG: Not removing #blq-content>#find-a-forecast of length 87:  Find a Forecast Favourite Locations (—)...
+2017-07-24 20:28:30 [readability.readability] DEBUG: Removed  0.000 .language-panel>.language-picker with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:30 [readability.readability] DEBUG: Removed  0.000 .site-options>.language-panel with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:30 [readability.readability] DEBUG: Removed  0.000 .settings-panel>#unit-picker with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:30 [readability.readability] DEBUG: Removed  0.000 .site-options>.settings-panel with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:30 [readability.readability] DEBUG: Removed 22.193 #blq-content>.site-options with weight 0 cause it has too short content length 17 without a single image.
+2017-07-24 20:28:30 [readability.readability] DEBUG: Removed #blq-content>.site-masthead with score  0.000 and weight -25
+2017-07-24 20:28:30 [requests.packages.urllib3.connectionpool] INFO: Starting new HTTP connection (1): www.bbc.com
+2017-07-24 20:28:31 [requests.packages.urllib3.connectionpool] DEBUG: "GET /weather/1275339?day=1 HTTP/1.1" 200 438859
+2017-07-24 20:28:33 [scrapy.core.scraper] WARNING: Dropped: 
+{'author': '',
+ 'countriesMentioned': ['United States'],
+ 'newsHeadline': 'BBC Weather - Mumbai',
+ 'newsText': u'## Find a Forecast  ## Favourite Locations (\u2014)  You need javascript enabled to save favourites.  Daily forecast Day | Weather | Maximum Day Temperature | Minimum Night Temperature | Wind Direction and Speed   ---|---|---|---|---   Monday  |  Light Rain Shower  |  31\xc2\xb0C 88\xc2\xb0F |  26\xc2\xb0C 79\xc2\xb0F |  West South Westerly   Wind Speed 13 km/h 8 mph   Tuesday  |  Heavy Rain Shower  |  31\xc2\xb0C 88\xc2\xb0F |  26\xc2\xb0C 79\xc2\xb0F |  West South Westerly   Wind Speed 14 km/h 9 mph   Wednesday  |  Heavy Rain Shower  |  31\xc2\xb0C 88\xc2\xb0F |  26\xc2\xb0C 79\xc2\xb0F |  West South Westerly   Wind Speed 16 km/h 10 mph   Thursday  |  Heavy Rain Shower  |  31\xc2\xb0C 88\xc2\xb0F |  26\xc2\xb0C 79\xc2\xb0F |  West South Westerly   Wind Speed 14 km/h 9 mph   Friday  |  Heavy Rain Shower  |  31\xc2\xb0C 88\xc2\xb0F |  26\xc2\xb0C 79\xc2\xb0F |  South Westerly   Wind Speed 13 km/h 8 mph      ## Forecast  Sunrise 05:43 Sunset 18:47  Last updated 18:43  Graph Table  Weather forecast details for Tuesday 25 July. Each column contains hourly forecast details for weather conditions, temperature, wind speed, wind direction, humidity, visibility and pressure. Time | 0830\xa0hours| 1130\xa0hours| 1430\xa0hours| 1730\xa0hours| 2030\xa0hours| 2330\xa0hours| 0230\xa0hours   Wed| 0530\xa0hours   ---|---|---|---|---|---|---|---|---   Weather Conditions |  ![Light Rain Shower](http://static.bbci.co.uk/weather/0.5.4508/images/icons/individual_56_icons/en_on_light_bg/10.gif) |  ![Heavy Rain Shower](http://static.bbci.co.uk/weather/0.5.4508/images/icons/individual_56_icons/en_on_light_bg/14.gif) |  ![Heavy Rain Shower](http://static.bbci.co.uk/weather/0.5.4508/images/icons/individual_56_icons/en_on_light_bg/14.gif) |  ![Light Rain Shower](http://static.bbci.co.uk/weather/0.5.4508/images/icons/individual_56_icons/en_on_light_bg/10.gif) |  ![Light Rain Shower](http://static.bbci.co.uk/weather/0.5.4508/images/icons/individual_56_icons/en_on_light_bg/9.gif) |  ![Light Rain Shower](http://static.bbci.co.uk/weather/0.5.4508/images/icons/individual_56_icons/en_on_light_bg/9.gif) |  ![Light Rain Shower](http://static.bbci.co.uk/weather/0.5.4508/images/icons/individual_56_icons/en_on_light_bg/9.gif) |  ![Light Rain Shower](http://static.bbci.co.uk/weather/0.5.4508/images/icons/individual_56_icons/en_on_light_bg/9.gif)   Temperature (\xc2\xb0C/\xc2\xb0F) |  29\xc2\xb0C 84\xc2\xb0F |  30\xc2\xb0C 86\xc2\xb0F |  31\xc2\xb0C 88\xc2\xb0F |  29\xc2\xb0C 84\xc2\xb0F |  28\xc2\xb0C 82\xc2\xb0F |  28\xc2\xb0C 82\xc2\xb0F |  28\xc2\xb0C 82\xc2\xb0F |  28\xc2\xb0C 82\xc2\xb0F   Wind Speed (mph/km/h) |  Wind Speed 13 km/h 8 mph West South Westerly |  Wind Speed 14 km/h 9 mph West South Westerly |  Wind Speed 14 km/h 9 mph West South Westerly |  Wind Speed 14 km/h 9 mph West South Westerly |  Wind Speed 13 km/h 8 mph West South Westerly |  Wind Speed 13 km/h 8 mph South Westerly |  Wind Speed 11 km/h 7 mph South Westerly |  Wind Speed 13 km/h 8 mph South Westerly   Wind Direction |  WSW |  WSW |  WSW |  WSW |  WSW |  SW |  SW |  SW   Humidity |  86% |  81% |  77% |  83% |  87% |  89% |  89% |  89%   Visibility (E = Excellent, VG = Very Good, G = Good, M = Moderate, P = Poor, VP = Very Poor) | M| M| M| M| M| M| M| M   Pressure (Millibars) |  1005 |  1005 |  1003 |  1002 |  1004 |  1004 |  1003 | 1003      ### Environmental Summary  #### UV: 7  European range: 1-11+  BBC Weather in association with the Met Office  All times are IST (Asia/Kolkata, GMT+0530) unless otherwise stated  Information given for most appropriate forecast location. See FAQs for details    *[M]: Moderate   *[SW]: South Westerly   *[WSW]: West South Westerly',
+ 'newsUrl': 'http://www.bbc.com/weather/1275339?day=1'}
+2017-07-24 20:28:33 [root] INFO: Parsing URL: http://www.bbc.com/weather/1275339?day=2
+2017-07-24 20:28:33 [requests.packages.urllib3.connectionpool] INFO: Starting new HTTP connection (1): www.bbc.com
+2017-07-24 20:28:33 [requests.packages.urllib3.connectionpool] DEBUG: "GET /weather/1275339?day=2 HTTP/1.1" 200 438793
+2017-07-24 20:28:35 [readability.readability] DEBUG: Removing unlikely candidate - #blq-content>#bbccom_sponsor_section_1_2_3_4.bbccom_slot
+2017-07-24 20:28:35 [readability.readability] DEBUG: Removing unlikely candidate - #bbccom_sponsor_section_1_2_3_4.bbccom_slot>#bbccom_sponsor_section.bbccom_advert.bbccom_display_none
+2017-07-24 20:28:35 [readability.readability] DEBUG: Removing unlikely candidate - #bbccom_sponsor_section.bbccom_advert.bbccom_display_none>#bbccom_sponsor_section_text
+2017-07-24 20:28:35 [readability.readability] DEBUG: Removing unlikely candidate - #bbccom_sponsor_section.bbccom_advert.bbccom_display_none>#bbccom_sponsor_section_image
+2017-07-24 20:28:35 [readability.readability] DEBUG: Branch  8.000 noscript>#blq-no-js-banner link density 0.183 ->  6.533
+2017-07-24 20:28:35 [readability.readability] DEBUG: Branch  1.500 #blq-global>noscript link density 0.183 ->  1.225
+2017-07-24 20:28:35 [readability.readability] DEBUG: Branch  7.000 .hourly>#hourly.day-2.dataview.fixed-window link density 0.000 ->  7.000
+2017-07-24 20:28:35 [readability.readability] DEBUG: Branch  6.000 .inner>.hourly link density 0.000 ->  6.000
+2017-07-24 20:28:35 [readability.readability] DEBUG: Branch  7.000 .environmental-column>#environmental-summary.environmental link density 0.000 ->  7.000
+2017-07-24 20:28:35 [readability.readability] DEBUG: Branch  6.000 .regional-summary>.environmental-column link density 0.000 ->  6.000
+2017-07-24 20:28:35 [readability.readability] DEBUG: Branch  8.000 .wr-forecast-video.gel-minion-bold>div{01} link density 0.000 ->  8.000
+2017-07-24 20:28:35 [readability.readability] DEBUG: Branch  6.500 #u9493017951026559>.wr-forecast-video.gel-minion-bold link density 0.000 ->  6.500
+2017-07-24 20:28:35 [readability.readability] DEBUG: Branch 11.000 .column-sidebar>.observations.module link density 0.000 -> 11.000
+2017-07-24 20:28:35 [readability.readability] DEBUG: Branch -18.500 .columns>.column-sidebar link density 0.095 -> -16.748
+2017-07-24 20:28:35 [readability.readability] DEBUG: Branch  8.500 .observations.module>.observationsRecord link density 0.000 ->  8.500
+2017-07-24 20:28:35 [readability.readability] DEBUG: Branch  8.000 .observationsRecord>.hpv link density 0.000 ->  8.000
+2017-07-24 20:28:35 [readability.readability] DEBUG: Branch  9.000 .observations.module>.station-data link density 0.000 ->  9.000
+2017-07-24 20:28:35 [readability.readability] DEBUG: Branch 12.000 #blq-content>.ack link density 0.073 -> 11.125
+2017-07-24 20:28:35 [readability.readability] DEBUG: Branch 33.500 #blq-main.blq-clearfix>#blq-content link density 0.338 -> 22.184
+2017-07-24 20:28:35 [readability.readability] DEBUG: Branch -15.000 #blq-container-inner>#blq-foot.blq-rst.blq-clearfix.blq-foot-transparent.blq-foot-text-dark link density 0.353 -> -9.707
+2017-07-24 20:28:35 [readability.readability] DEBUG: Branch  6.000 #blq-container.blq-lang-en.blq-dotcom>#blq-container-inner link density 0.340 ->  3.962
+2017-07-24 20:28:35 [readability.readability] DEBUG: Branch 11.000 #blq-foot.blq-rst.blq-clearfix.blq-foot-transparent.blq-foot-text-dark>#blq-obit link density 0.000 -> 11.000
+2017-07-24 20:28:35 [readability.readability] DEBUG: Branch  2.000 tbody>tr.day link density 0.000 ->  2.000
+2017-07-24 20:28:35 [readability.readability] DEBUG: Branch  5.000 table.forecast.daily-forecast>tbody link density 0.000 ->  5.000
+2017-07-24 20:28:35 [readability.readability] DEBUG: Branch  2.000 tbody>tr.day link density 0.000 ->  2.000
+2017-07-24 20:28:35 [readability.readability] DEBUG: Branch  2.000 tbody>tr.day link density 0.000 ->  2.000
+2017-07-24 20:28:35 [readability.readability] DEBUG: Branch  2.000 tbody>tr.day link density 0.000 ->  2.000
+2017-07-24 20:28:35 [readability.readability] DEBUG: Branch  2.000 tbody>tr.day link density 0.000 ->  2.000
+2017-07-24 20:28:35 [readability.readability] DEBUG: Branch 16.000 tbody>tr.windspeed link density 0.000 -> 16.000
+2017-07-24 20:28:35 [readability.readability] DEBUG: Branch  8.000 table.weather.fixed-window.three-hourly-8.one-hourly-0>tbody link density 0.000 ->  8.000
+2017-07-24 20:28:35 [readability.readability] INFO: Top 5 : 22.184 #blq-main.blq-clearfix>#blq-content
+2017-07-24 20:28:35 [readability.readability] INFO: Top 5 : 16.000 tbody>tr.windspeed
+2017-07-24 20:28:35 [readability.readability] INFO: Top 5 : 11.125 #blq-content>.ack
+2017-07-24 20:28:35 [readability.readability] INFO: Top 5 : 11.000 .column-sidebar>.observations.module
+2017-07-24 20:28:35 [readability.readability] INFO: Top 5 : 11.000 #blq-foot.blq-rst.blq-clearfix.blq-foot-transparent.blq-foot-text-dark>#blq-obit
+2017-07-24 20:28:35 [readability.readability] DEBUG: Not removing #forecast-data-table.off-screen>table.forecast.daily-forecast of length 573:  Daily forecast Day Weather Maximum Day ...
+2017-07-24 20:28:35 [readability.readability] DEBUG: Removed  0.000 .about-links.column>ul with weight 0 cause it has too many links 0.950 for its weight 0.
+2017-07-24 20:28:35 [readability.readability] DEBUG: Removed  0.000 .elsewhere-links.column>ul with weight 0 cause it has too many links 0.977 for its weight 0.
+2017-07-24 20:28:35 [readability.readability] DEBUG: Removed  0.000 .internal-links.column>ul with weight 0 cause it has too many links 0.963 for its weight 0.
+2017-07-24 20:28:35 [readability.readability] DEBUG: Removed  0.000 .rss-panel>ul with weight 0 cause it has too short content length 24 without a single image.
+2017-07-24 20:28:35 [readability.readability] DEBUG: Removed  0.000 .tabbed-forecast>ul#all-daily-tabs with weight 0 cause it has too many links 0.987 for its weight 0.
+2017-07-24 20:28:35 [readability.readability] DEBUG: Removed  0.000 .daily-window>ul.daily with weight 0 cause it has too many links 0.989 for its weight 0.
+2017-07-24 20:28:35 [readability.readability] DEBUG: Removed  0.000 .language-picker>ul with weight 0 cause it has too many links 0.697 for its weight 0.
+2017-07-24 20:28:35 [readability.readability] DEBUG: Removed  0.000 #unit-picker>ul.wind.unit-options with weight 0 cause it has too short content length 8 without a single image.
+2017-07-24 20:28:35 [readability.readability] DEBUG: Removed  0.000 #unit-picker>ul.temp.unit-options with weight 0 cause it has too short content length 7 without a single image.
+2017-07-24 20:28:35 [readability.readability] DEBUG: Not removing #blq-content>.ack of length 192:  BBC Weather in association with the Met...
+2017-07-24 20:28:35 [readability.readability] DEBUG: Removed  0.000 #related-links>.about-links.column with weight 0 cause it has too short content length 17 without a single image.
+2017-07-24 20:28:35 [readability.readability] DEBUG: Removed  0.000 #related-links>.elsewhere-links.column with weight 0 cause it has too short content length 9 without a single image.
+2017-07-24 20:28:35 [readability.readability] DEBUG: Removed  0.000 #related-links>.internal-links.column with weight 0 cause it has too short content length 13 without a single image.
+2017-07-24 20:28:35 [readability.readability] DEBUG: Removed #blq-content>#related-links with score  0.000 and weight -25
+2017-07-24 20:28:35 [readability.readability] DEBUG: Not removing .observations.module>.station-data of length 71:  Observation station: MUMBAI INTERNATION...
+2017-07-24 20:28:35 [readability.readability] DEBUG: Not removing .observationsRecord>.hpv of length 58:  Humidity: 78% Visibility: Poor Pressure...
+2017-07-24 20:28:35 [readability.readability] DEBUG: Not removing .observations.module>.observationsRecord of length 115:  29Â°C 84Â°F Wind Speed 14 km/h 9 mph We...
+2017-07-24 20:28:35 [readability.readability] DEBUG: Not removing .column-sidebar>.observations.module of length 234:  Observations Observed at 18:30, Monday ...
+2017-07-24 20:28:35 [readability.readability] DEBUG: Not removing div{01}>.wr-cs-article__media-asset of length 61: Please turn on JavaScript. Media require...
+2017-07-24 20:28:35 [readability.readability] DEBUG: Not removing .wr-forecast-video.gel-minion-bold>div{01} of length 98: Please turn on JavaScript. Media require...
+2017-07-24 20:28:35 [readability.readability] DEBUG: Not removing #u9493017951026559>.wr-forecast-video.gel-minion-bold of length 98: Please turn on JavaScript. Media require...
+2017-07-24 20:28:35 [readability.readability] DEBUG: Not removing #forecast-video>#u9493017951026559 of length 98: Please turn on JavaScript. Media require...
+2017-07-24 20:28:35 [readability.readability] DEBUG: Not removing .video>#forecast-video of length 98: Please turn on JavaScript. Media require...
+2017-07-24 20:28:35 [readability.readability] DEBUG: Not removing .forecast-videos.forecast-videos--morph.module>.video of length 98:  Please turn on JavaScript. Media requir...
+2017-07-24 20:28:35 [readability.readability] DEBUG: Not removing .column-sidebar>.forecast-videos.forecast-videos--morph.module of length 136:  South and Central Asia Forecast Video P...
+2017-07-24 20:28:35 [readability.readability] DEBUG: Removed  0.000 .rss>.rss-panel with weight 0 cause it has too short content length 9 without a single image.
+2017-07-24 20:28:35 [readability.readability] DEBUG: Removed  0.000 .pagetools.blq-clearfix>.rss with weight 0 cause it has too short content length 9 without a single image.
+2017-07-24 20:28:35 [readability.readability] DEBUG: Removed  0.000 .pagetools.blq-clearfix>.bbc-st.bbc-st-slim.bbc-st-colour with weight 0 cause it has too short content length 15 without a single image.
+2017-07-24 20:28:35 [readability.readability] DEBUG: Removed -16.748 .column-sidebar>.pagetools.blq-clearfix with weight 0 cause it has too short content length 21 without a single image.
+2017-07-24 20:28:35 [readability.readability] DEBUG: Removed .columns>.column-sidebar with score -16.748 and weight -25
+2017-07-24 20:28:35 [readability.readability] DEBUG: Removed  0.000 #maps.forecast-maps-wrapper>.script-templates with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:35 [readability.readability] DEBUG: Removed  0.000 .column-main>#maps.forecast-maps-wrapper with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:35 [readability.readability] DEBUG: Not removing .environmental-column>#environmental-summary.environmental of length 27:  UV: 7 European range: 1-11+ 
+2017-07-24 20:28:35 [readability.readability] DEBUG: Not removing .regional-summary>.environmental-column of length 49:  Environmental Summary UV: 7 European ra...
+2017-07-24 20:28:35 [readability.readability] DEBUG: Not removing .column-main>.regional-summary of length 49:  Environmental Summary UV: 7 European ra...
+2017-07-24 20:28:35 [readability.readability] DEBUG: Not removing .columns>.column-main of length 49:  Environmental Summary UV: 7 European ra...
+2017-07-24 20:28:35 [readability.readability] DEBUG: Not removing #blq-content>.columns of length 49:  Environmental Summary UV: 7 European ra...
+2017-07-24 20:28:35 [readability.readability] DEBUG: Not removing #hourly.day-2.dataview.fixed-window>.detail-container.group of length 30:  Last updated 18:43 Graph Table 
+2017-07-24 20:28:35 [readability.readability] DEBUG: Removed  0.000 .tabbed-forecast>.daily-window with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:35 [readability.readability] DEBUG: Removed  0.000 .tabbed-forecast>.forecast-options with weight 0 cause it has too many links 0.966 for its weight 0.
+2017-07-24 20:28:35 [readability.readability] DEBUG: Removed 22.184 #blq-content>#bbccom_mpu_1_2_3_4.bbccom_slot with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:35 [readability.readability] DEBUG: Not removing #blq-content>#forecast-data-table.off-screen of length 573:  Daily forecast Day Weather Maximum Day ...
+2017-07-24 20:28:35 [readability.readability] DEBUG: Not removing #find-a-forecast>#favourites of length 71:  Favourite Locations (—) You need javasc...
+2017-07-24 20:28:35 [readability.readability] DEBUG: Removed  0.000 .locator-component>#locator-search-default.locator-search with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:35 [readability.readability] DEBUG: Removed  0.000 .locator-weather>.locator-component with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:35 [readability.readability] DEBUG: Removed  0.000 #find-a-forecast>.locator-weather with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:35 [readability.readability] DEBUG: Not removing #blq-content>#find-a-forecast of length 87:  Find a Forecast Favourite Locations (—)...
+2017-07-24 20:28:35 [readability.readability] DEBUG: Removed  0.000 .language-panel>.language-picker with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:35 [readability.readability] DEBUG: Removed  0.000 .site-options>.language-panel with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:35 [readability.readability] DEBUG: Removed  0.000 .settings-panel>#unit-picker with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:35 [readability.readability] DEBUG: Removed  0.000 .site-options>.settings-panel with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:35 [readability.readability] DEBUG: Removed 22.184 #blq-content>.site-options with weight 0 cause it has too short content length 17 without a single image.
+2017-07-24 20:28:35 [readability.readability] DEBUG: Removed #blq-content>.site-masthead with score  0.000 and weight -25
+2017-07-24 20:28:35 [requests.packages.urllib3.connectionpool] INFO: Starting new HTTP connection (1): www.bbc.com
+2017-07-24 20:28:36 [requests.packages.urllib3.connectionpool] DEBUG: "GET /weather/1275339?day=2 HTTP/1.1" 200 438793
+2017-07-24 20:28:39 [scrapy.core.scraper] WARNING: Dropped: 
+{'author': '',
+ 'countriesMentioned': ['United States'],
+ 'newsHeadline': 'BBC Weather - Mumbai',
+ 'newsText': u'## Find a Forecast  ## Favourite Locations (\u2014)  You need javascript enabled to save favourites.  Daily forecast Day | Weather | Maximum Day Temperature | Minimum Night Temperature | Wind Direction and Speed   ---|---|---|---|---   Monday  |  Light Rain Shower  |  31\xc2\xb0C 88\xc2\xb0F |  26\xc2\xb0C 79\xc2\xb0F |  West South Westerly   Wind Speed 13 km/h 8 mph   Tuesday  |  Heavy Rain Shower  |  31\xc2\xb0C 88\xc2\xb0F |  26\xc2\xb0C 79\xc2\xb0F |  West South Westerly   Wind Speed 14 km/h 9 mph   Wednesday  |  Heavy Rain Shower  |  31\xc2\xb0C 88\xc2\xb0F |  26\xc2\xb0C 79\xc2\xb0F |  West South Westerly   Wind Speed 16 km/h 10 mph   Thursday  |  Heavy Rain Shower  |  31\xc2\xb0C 88\xc2\xb0F |  26\xc2\xb0C 79\xc2\xb0F |  West South Westerly   Wind Speed 14 km/h 9 mph   Friday  |  Heavy Rain Shower  |  31\xc2\xb0C 88\xc2\xb0F |  26\xc2\xb0C 79\xc2\xb0F |  South Westerly   Wind Speed 13 km/h 8 mph      ## Forecast  Sunrise 05:43 Sunset 18:47  Last updated 18:43  Graph Table  Weather forecast details for Wednesday 26 July. Each column contains hourly forecast details for weather conditions, temperature, wind speed, wind direction, humidity, visibility and pressure. Time | 0830\xa0hours| 1130\xa0hours| 1430\xa0hours| 1730\xa0hours| 2030\xa0hours| 2330\xa0hours| 0230\xa0hours   Thu| 0530\xa0hours   ---|---|---|---|---|---|---|---|---   Weather Conditions |  ![Light Rain Shower](http://static.bbci.co.uk/weather/0.5.4508/images/icons/individual_56_icons/en_on_light_bg/10.gif) |  ![Heavy Rain Shower](http://static.bbci.co.uk/weather/0.5.4508/images/icons/individual_56_icons/en_on_light_bg/14.gif) |  ![Heavy Rain Shower](http://static.bbci.co.uk/weather/0.5.4508/images/icons/individual_56_icons/en_on_light_bg/14.gif) |  ![Light Rain Shower](http://static.bbci.co.uk/weather/0.5.4508/images/icons/individual_56_icons/en_on_light_bg/10.gif) |  ![Light Rain Shower](http://static.bbci.co.uk/weather/0.5.4508/images/icons/individual_56_icons/en_on_light_bg/9.gif) |  ![Light Rain Shower](http://static.bbci.co.uk/weather/0.5.4508/images/icons/individual_56_icons/en_on_light_bg/9.gif) |  ![Light Rain Shower](http://static.bbci.co.uk/weather/0.5.4508/images/icons/individual_56_icons/en_on_light_bg/9.gif) |  ![Light Rain Shower](http://static.bbci.co.uk/weather/0.5.4508/images/icons/individual_56_icons/en_on_light_bg/9.gif)   Temperature (\xc2\xb0C/\xc2\xb0F) |  29\xc2\xb0C 84\xc2\xb0F |  30\xc2\xb0C 86\xc2\xb0F |  30\xc2\xb0C 86\xc2\xb0F |  29\xc2\xb0C 84\xc2\xb0F |  28\xc2\xb0C 82\xc2\xb0F |  28\xc2\xb0C 82\xc2\xb0F |  28\xc2\xb0C 82\xc2\xb0F |  28\xc2\xb0C 82\xc2\xb0F   Wind Speed (mph/km/h) |  Wind Speed 13 km/h 8 mph West South Westerly |  Wind Speed 16 km/h 10 mph West South Westerly |  Wind Speed 14 km/h 9 mph West South Westerly |  Wind Speed 14 km/h 9 mph West South Westerly |  Wind Speed 11 km/h 7 mph South Westerly |  Wind Speed 13 km/h 8 mph South Westerly | Wind Speed 11 km/h 7 mph South Westerly |  Wind Speed 11 km/h 7 mph South Westerly   Wind Direction |  WSW |  WSW |  WSW |  WSW |  SW |  SW |  SW |  SW   Humidity |  86% |  79% |  78% |  80% |  87% |  88% |  90% |  90%   Visibility (E = Excellent, VG = Very Good, G = Good, M = Moderate, P = Poor, VP = Very Poor) | M| M| M| G| G| M| M| G   Pressure (Millibars) |  1005 |  1005 |  1003 |  1003 |  1005 |  1006 |  1004 | 1005      ### Environmental Summary  #### UV: 7  European range: 1-11+  BBC Weather in association with the Met Office  All times are IST (Asia/Kolkata, GMT+0530) unless otherwise stated  Information given for most appropriate forecast location. See FAQs for details    *[M]: Moderate   *[SW]: South Westerly   *[G]: Good   *[WSW]: West South Westerly',
+ 'newsUrl': 'http://www.bbc.com/weather/1275339?day=2'}
+2017-07-24 20:28:39 [root] INFO: Parsing URL: http://www.bbc.com/weather/1275339?day=3
+2017-07-24 20:28:39 [requests.packages.urllib3.connectionpool] INFO: Starting new HTTP connection (1): www.bbc.com
+2017-07-24 20:28:39 [requests.packages.urllib3.connectionpool] DEBUG: "GET /weather/1275339?day=3 HTTP/1.1" 200 438821
+2017-07-24 20:28:42 [readability.readability] DEBUG: Removing unlikely candidate - #blq-content>#bbccom_sponsor_section_1_2_3_4.bbccom_slot
+2017-07-24 20:28:42 [readability.readability] DEBUG: Removing unlikely candidate - #bbccom_sponsor_section_1_2_3_4.bbccom_slot>#bbccom_sponsor_section.bbccom_advert.bbccom_display_none
+2017-07-24 20:28:42 [readability.readability] DEBUG: Removing unlikely candidate - #bbccom_sponsor_section.bbccom_advert.bbccom_display_none>#bbccom_sponsor_section_text
+2017-07-24 20:28:42 [readability.readability] DEBUG: Removing unlikely candidate - #bbccom_sponsor_section.bbccom_advert.bbccom_display_none>#bbccom_sponsor_section_image
+2017-07-24 20:28:42 [readability.readability] DEBUG: Branch  8.000 noscript>#blq-no-js-banner link density 0.183 ->  6.533
+2017-07-24 20:28:42 [readability.readability] DEBUG: Branch  1.500 #blq-global>noscript link density 0.183 ->  1.225
+2017-07-24 20:28:42 [readability.readability] DEBUG: Branch  7.000 .hourly>#hourly.day-3.dataview.fixed-window link density 0.000 ->  7.000
+2017-07-24 20:28:42 [readability.readability] DEBUG: Branch  6.000 .inner>.hourly link density 0.000 ->  6.000
+2017-07-24 20:28:42 [readability.readability] DEBUG: Branch  7.000 .environmental-column>#environmental-summary.environmental link density 0.000 ->  7.000
+2017-07-24 20:28:42 [readability.readability] DEBUG: Branch  6.000 .regional-summary>.environmental-column link density 0.000 ->  6.000
+2017-07-24 20:28:42 [readability.readability] DEBUG: Branch  8.000 .wr-forecast-video.gel-minion-bold>div{01} link density 0.000 ->  8.000
+2017-07-24 20:28:42 [readability.readability] DEBUG: Branch  6.500 #u9493017951026559>.wr-forecast-video.gel-minion-bold link density 0.000 ->  6.500
+2017-07-24 20:28:42 [readability.readability] DEBUG: Branch 11.000 .column-sidebar>.observations.module link density 0.000 -> 11.000
+2017-07-24 20:28:42 [readability.readability] DEBUG: Branch -18.500 .columns>.column-sidebar link density 0.095 -> -16.748
+2017-07-24 20:28:42 [readability.readability] DEBUG: Branch  8.500 .observations.module>.observationsRecord link density 0.000 ->  8.500
+2017-07-24 20:28:42 [readability.readability] DEBUG: Branch  8.000 .observationsRecord>.hpv link density 0.000 ->  8.000
+2017-07-24 20:28:42 [readability.readability] DEBUG: Branch  9.000 .observations.module>.station-data link density 0.000 ->  9.000
+2017-07-24 20:28:42 [readability.readability] DEBUG: Branch 12.000 #blq-content>.ack link density 0.073 -> 11.125
+2017-07-24 20:28:42 [readability.readability] DEBUG: Branch 33.500 #blq-main.blq-clearfix>#blq-content link density 0.338 -> 22.179
+2017-07-24 20:28:42 [readability.readability] DEBUG: Branch -15.000 #blq-container-inner>#blq-foot.blq-rst.blq-clearfix.blq-foot-transparent.blq-foot-text-dark link density 0.353 -> -9.707
+2017-07-24 20:28:42 [readability.readability] DEBUG: Branch  6.000 #blq-container.blq-lang-en.blq-dotcom>#blq-container-inner link density 0.340 ->  3.961
+2017-07-24 20:28:42 [readability.readability] DEBUG: Branch 11.000 #blq-foot.blq-rst.blq-clearfix.blq-foot-transparent.blq-foot-text-dark>#blq-obit link density 0.000 -> 11.000
+2017-07-24 20:28:42 [readability.readability] DEBUG: Branch  2.000 tbody>tr.day link density 0.000 ->  2.000
+2017-07-24 20:28:42 [readability.readability] DEBUG: Branch  5.000 table.forecast.daily-forecast>tbody link density 0.000 ->  5.000
+2017-07-24 20:28:42 [readability.readability] DEBUG: Branch  2.000 tbody>tr.day link density 0.000 ->  2.000
+2017-07-24 20:28:42 [readability.readability] DEBUG: Branch  2.000 tbody>tr.day link density 0.000 ->  2.000
+2017-07-24 20:28:42 [readability.readability] DEBUG: Branch  2.000 tbody>tr.day link density 0.000 ->  2.000
+2017-07-24 20:28:42 [readability.readability] DEBUG: Branch  2.000 tbody>tr.day link density 0.000 ->  2.000
+2017-07-24 20:28:42 [readability.readability] DEBUG: Branch 16.000 tbody>tr.windspeed link density 0.000 -> 16.000
+2017-07-24 20:28:42 [readability.readability] DEBUG: Branch  8.000 table.weather.fixed-window.three-hourly-8.one-hourly-0>tbody link density 0.000 ->  8.000
+2017-07-24 20:28:42 [readability.readability] INFO: Top 5 : 22.179 #blq-main.blq-clearfix>#blq-content
+2017-07-24 20:28:42 [readability.readability] INFO: Top 5 : 16.000 tbody>tr.windspeed
+2017-07-24 20:28:42 [readability.readability] INFO: Top 5 : 11.125 #blq-content>.ack
+2017-07-24 20:28:42 [readability.readability] INFO: Top 5 : 11.000 .column-sidebar>.observations.module
+2017-07-24 20:28:42 [readability.readability] INFO: Top 5 : 11.000 #blq-foot.blq-rst.blq-clearfix.blq-foot-transparent.blq-foot-text-dark>#blq-obit
+2017-07-24 20:28:42 [readability.readability] DEBUG: Not removing #forecast-data-table.off-screen>table.forecast.daily-forecast of length 573:  Daily forecast Day Weather Maximum Day ...
+2017-07-24 20:28:42 [readability.readability] DEBUG: Removed  0.000 .about-links.column>ul with weight 0 cause it has too many links 0.950 for its weight 0.
+2017-07-24 20:28:42 [readability.readability] DEBUG: Removed  0.000 .elsewhere-links.column>ul with weight 0 cause it has too many links 0.977 for its weight 0.
+2017-07-24 20:28:42 [readability.readability] DEBUG: Removed  0.000 .internal-links.column>ul with weight 0 cause it has too many links 0.963 for its weight 0.
+2017-07-24 20:28:42 [readability.readability] DEBUG: Removed  0.000 .rss-panel>ul with weight 0 cause it has too short content length 24 without a single image.
+2017-07-24 20:28:42 [readability.readability] DEBUG: Removed  0.000 .tabbed-forecast>ul#all-daily-tabs with weight 0 cause it has too many links 0.987 for its weight 0.
+2017-07-24 20:28:42 [readability.readability] DEBUG: Removed  0.000 .daily-window>ul.daily with weight 0 cause it has too many links 0.989 for its weight 0.
+2017-07-24 20:28:42 [readability.readability] DEBUG: Removed  0.000 .language-picker>ul with weight 0 cause it has too many links 0.697 for its weight 0.
+2017-07-24 20:28:42 [readability.readability] DEBUG: Removed  0.000 #unit-picker>ul.wind.unit-options with weight 0 cause it has too short content length 8 without a single image.
+2017-07-24 20:28:42 [readability.readability] DEBUG: Removed  0.000 #unit-picker>ul.temp.unit-options with weight 0 cause it has too short content length 7 without a single image.
+2017-07-24 20:28:42 [readability.readability] DEBUG: Not removing #blq-content>.ack of length 192:  BBC Weather in association with the Met...
+2017-07-24 20:28:42 [readability.readability] DEBUG: Removed  0.000 #related-links>.about-links.column with weight 0 cause it has too short content length 17 without a single image.
+2017-07-24 20:28:42 [readability.readability] DEBUG: Removed  0.000 #related-links>.elsewhere-links.column with weight 0 cause it has too short content length 9 without a single image.
+2017-07-24 20:28:42 [readability.readability] DEBUG: Removed  0.000 #related-links>.internal-links.column with weight 0 cause it has too short content length 13 without a single image.
+2017-07-24 20:28:42 [readability.readability] DEBUG: Removed #blq-content>#related-links with score  0.000 and weight -25
+2017-07-24 20:28:42 [readability.readability] DEBUG: Not removing .observations.module>.station-data of length 71:  Observation station: MUMBAI INTERNATION...
+2017-07-24 20:28:42 [readability.readability] DEBUG: Not removing .observationsRecord>.hpv of length 58:  Humidity: 78% Visibility: Poor Pressure...
+2017-07-24 20:28:42 [readability.readability] DEBUG: Not removing .observations.module>.observationsRecord of length 115:  29Â°C 84Â°F Wind Speed 14 km/h 9 mph We...
+2017-07-24 20:28:42 [readability.readability] DEBUG: Not removing .column-sidebar>.observations.module of length 234:  Observations Observed at 18:30, Monday ...
+2017-07-24 20:28:42 [readability.readability] DEBUG: Not removing div{01}>.wr-cs-article__media-asset of length 61: Please turn on JavaScript. Media require...
+2017-07-24 20:28:42 [readability.readability] DEBUG: Not removing .wr-forecast-video.gel-minion-bold>div{01} of length 98: Please turn on JavaScript. Media require...
+2017-07-24 20:28:42 [readability.readability] DEBUG: Not removing #u9493017951026559>.wr-forecast-video.gel-minion-bold of length 98: Please turn on JavaScript. Media require...
+2017-07-24 20:28:42 [readability.readability] DEBUG: Not removing #forecast-video>#u9493017951026559 of length 98: Please turn on JavaScript. Media require...
+2017-07-24 20:28:42 [readability.readability] DEBUG: Not removing .video>#forecast-video of length 98: Please turn on JavaScript. Media require...
+2017-07-24 20:28:42 [readability.readability] DEBUG: Not removing .forecast-videos.forecast-videos--morph.module>.video of length 98:  Please turn on JavaScript. Media requir...
+2017-07-24 20:28:42 [readability.readability] DEBUG: Not removing .column-sidebar>.forecast-videos.forecast-videos--morph.module of length 136:  South and Central Asia Forecast Video P...
+2017-07-24 20:28:42 [readability.readability] DEBUG: Removed  0.000 .rss>.rss-panel with weight 0 cause it has too short content length 9 without a single image.
+2017-07-24 20:28:42 [readability.readability] DEBUG: Removed  0.000 .pagetools.blq-clearfix>.rss with weight 0 cause it has too short content length 9 without a single image.
+2017-07-24 20:28:42 [readability.readability] DEBUG: Removed  0.000 .pagetools.blq-clearfix>.bbc-st.bbc-st-slim.bbc-st-colour with weight 0 cause it has too short content length 15 without a single image.
+2017-07-24 20:28:42 [readability.readability] DEBUG: Removed -16.748 .column-sidebar>.pagetools.blq-clearfix with weight 0 cause it has too short content length 21 without a single image.
+2017-07-24 20:28:42 [readability.readability] DEBUG: Removed .columns>.column-sidebar with score -16.748 and weight -25
+2017-07-24 20:28:42 [readability.readability] DEBUG: Removed  0.000 #maps.forecast-maps-wrapper>.script-templates with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:42 [readability.readability] DEBUG: Removed  0.000 .column-main>#maps.forecast-maps-wrapper with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:42 [readability.readability] DEBUG: Not removing .environmental-column>#environmental-summary.environmental of length 27:  UV: 6 European range: 1-11+ 
+2017-07-24 20:28:42 [readability.readability] DEBUG: Not removing .regional-summary>.environmental-column of length 49:  Environmental Summary UV: 6 European ra...
+2017-07-24 20:28:42 [readability.readability] DEBUG: Not removing .column-main>.regional-summary of length 49:  Environmental Summary UV: 6 European ra...
+2017-07-24 20:28:42 [readability.readability] DEBUG: Not removing .columns>.column-main of length 49:  Environmental Summary UV: 6 European ra...
+2017-07-24 20:28:42 [readability.readability] DEBUG: Not removing #blq-content>.columns of length 49:  Environmental Summary UV: 6 European ra...
+2017-07-24 20:28:42 [readability.readability] DEBUG: Not removing #hourly.day-3.dataview.fixed-window>.detail-container.group of length 30:  Last updated 18:43 Graph Table 
+2017-07-24 20:28:42 [readability.readability] DEBUG: Removed  0.000 .tabbed-forecast>.daily-window with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:42 [readability.readability] DEBUG: Removed  0.000 .tabbed-forecast>.forecast-options with weight 0 cause it has too many links 0.966 for its weight 0.
+2017-07-24 20:28:42 [readability.readability] DEBUG: Removed 22.179 #blq-content>#bbccom_mpu_1_2_3_4.bbccom_slot with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:42 [readability.readability] DEBUG: Not removing #blq-content>#forecast-data-table.off-screen of length 573:  Daily forecast Day Weather Maximum Day ...
+2017-07-24 20:28:42 [readability.readability] DEBUG: Not removing #find-a-forecast>#favourites of length 71:  Favourite Locations (—) You need javasc...
+2017-07-24 20:28:42 [readability.readability] DEBUG: Removed  0.000 .locator-component>#locator-search-default.locator-search with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:42 [readability.readability] DEBUG: Removed  0.000 .locator-weather>.locator-component with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:42 [readability.readability] DEBUG: Removed  0.000 #find-a-forecast>.locator-weather with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:42 [readability.readability] DEBUG: Not removing #blq-content>#find-a-forecast of length 87:  Find a Forecast Favourite Locations (—)...
+2017-07-24 20:28:42 [readability.readability] DEBUG: Removed  0.000 .language-panel>.language-picker with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:42 [readability.readability] DEBUG: Removed  0.000 .site-options>.language-panel with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:42 [readability.readability] DEBUG: Removed  0.000 .settings-panel>#unit-picker with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:42 [readability.readability] DEBUG: Removed  0.000 .site-options>.settings-panel with weight 0 cause it has too short content length 0 without a single image.
+2017-07-24 20:28:42 [readability.readability] DEBUG: Removed 22.179 #blq-content>.site-options with weight 0 cause it has too short content length 17 without a single image.
+2017-07-24 20:28:42 [readability.readability] DEBUG: Removed #blq-content>.site-masthead with score  0.000 and weight -25
+2017-07-24 20:28:42 [requests.packages.urllib3.connectionpool] INFO: Starting new HTTP connection (1): www.bbc.com
+2017-07-24 20:28:43 [requests.packages.urllib3.connectionpool] DEBUG: "GET /weather/1275339?day=3 HTTP/1.1" 200 438821
+2017-07-24 20:28:45 [scrapy.core.scraper] WARNING: Dropped: 
+{'author': '',
+ 'countriesMentioned': ['United States'],
+ 'newsHeadline': 'BBC Weather - Mumbai',
+ 'newsText': u'## Find a Forecast  ## Favourite Locations (\u2014)  You need javascript enabled to save favourites.  Daily forecast Day | Weather | Maximum Day Temperature | Minimum Night Temperature | Wind Direction and Speed   ---|---|---|---|---   Monday  |  Light Rain Shower  |  31\xc2\xb0C 88\xc2\xb0F |  26\xc2\xb0C 79\xc2\xb0F |  West South Westerly   Wind Speed 13 km/h 8 mph   Tuesday  |  Heavy Rain Shower  |  31\xc2\xb0C 88\xc2\xb0F |  26\xc2\xb0C 79\xc2\xb0F |  West South Westerly   Wind Speed 14 km/h 9 mph   Wednesday  |  Heavy Rain Shower  |  31\xc2\xb0C 88\xc2\xb0F |  26\xc2\xb0C 79\xc2\xb0F |  West South Westerly   Wind Speed 16 km/h 10 mph   Thursday  |  Heavy Rain Shower  |  31\xc2\xb0C 88\xc2\xb0F |  26\xc2\xb0C 79\xc2\xb0F |  West South Westerly   Wind Speed 14 km/h 9 mph   Friday  |  Heavy Rain Shower  |  31\xc2\xb0C 88\xc2\xb0F |  26\xc2\xb0C 79\xc2\xb0F |  South Westerly   Wind Speed 13 km/h 8 mph      ## Forecast  Sunrise 05:43 Sunset 18:46  Last updated 18:43  Graph Table  Weather forecast details for Thursday 27 July. Each column contains hourly forecast details for weather conditions, temperature, wind speed, wind direction, humidity, visibility and pressure. Time | 0830\xa0hours| 1130\xa0hours| 1430\xa0hours| 1730\xa0hours| 2030\xa0hours| 2330\xa0hours| 0230\xa0hours   Fri| 0530\xa0hours   ---|---|---|---|---|---|---|---|---   Weather Conditions |  ![Heavy Rain Shower](http://static.bbci.co.uk/weather/0.5.4508/images/icons/individual_56_icons/en_on_light_bg/14.gif) |  ![Heavy Rain Shower](http://static.bbci.co.uk/weather/0.5.4508/images/icons/individual_56_icons/en_on_light_bg/14.gif) |  ![Heavy Rain Shower](http://static.bbci.co.uk/weather/0.5.4508/images/icons/individual_56_icons/en_on_light_bg/14.gif) |  ![Heavy Rain Shower](http://static.bbci.co.uk/weather/0.5.4508/images/icons/individual_56_icons/en_on_light_bg/14.gif) |  ![Light Rain Shower](http://static.bbci.co.uk/weather/0.5.4508/images/icons/individual_56_icons/en_on_light_bg/9.gif) |  ![Light Rain Shower](http://static.bbci.co.uk/weather/0.5.4508/images/icons/individual_56_icons/en_on_light_bg/9.gif) |  ![Light Rain Shower](http://static.bbci.co.uk/weather/0.5.4508/images/icons/individual_56_icons/en_on_light_bg/9.gif) |  ![Light Rain Shower](http://static.bbci.co.uk/weather/0.5.4508/images/icons/individual_56_icons/en_on_light_bg/9.gif)   Temperature (\xc2\xb0C/\xc2\xb0F) |  28\xc2\xb0C 82\xc2\xb0F |  29\xc2\xb0C 84\xc2\xb0F |  30\xc2\xb0C 86\xc2\xb0F |  29\xc2\xb0C 84\xc2\xb0F |  28\xc2\xb0C 82\xc2\xb0F |  28\xc2\xb0C 82\xc2\xb0F |  28\xc2\xb0C 82\xc2\xb0F |  27\xc2\xb0C 81\xc2\xb0F   Wind Speed (mph/km/h) |  Wind Speed 11 km/h 7 mph West South Westerly |  Wind Speed 14 km/h 9 mph West South Westerly |  Wind Speed 13 km/h 8 mph West South Westerly |  Wind Speed 13 km/h 8 mph West South Westerly |  Wind Speed 11 km/h 7 mph South Westerly |  Wind Speed 11 km/h 7 mph South Westerly |  Wind Speed 10 km/h 6 mph South Westerly |  Wind Speed 10 km/h 6 mph South Westerly   Wind Direction |  WSW |  WSW |  WSW |  WSW |  SW |  SW |  SW |  SW   Humidity |  87% |  82% |  80% |  84% |  88% |  91% |  92% |  92%   Visibility (E = Excellent, VG = Very Good, G = Good, M = Moderate, P = Poor, VP = Very Poor) | G| M| M| M| M| M| M| M   Pressure (Millibars) |  1007 |  1007 |  1005 |  1005 |  1006 |  1007 |  1006 | 1006      ### Environmental Summary  #### UV: 6  European range: 1-11+  BBC Weather in association with the Met Office  All times are IST (Asia/Kolkata, GMT+0530) unless otherwise stated  Information given for most appropriate forecast location. See FAQs for details    *[M]: Moderate   *[SW]: South Westerly   *[G]: Good   *[WSW]: West South Westerly',
+ 'newsUrl': 'http://www.bbc.com/weather/1275339?day=3'}
+2017-07-24 20:28:45 [root] INFO: Parsing URL: http://www.bbc.com/terms/
+2017-07-24 20:28:45 [requests.packages.urllib3.connectionpool] INFO: Starting new HTTP connection (1): www.bbc.com
+2017-07-24 20:28:46 [requests.packages.urllib3.connectionpool] DEBUG: "GET /terms/ HTTP/1.1" 200 12187
+2017-07-24 20:28:46 [readability.readability] DEBUG: Removing unlikely candidate - header#orb-banner>#orb-header.orb-nav-pri.orb-nav-pri-white.orb-nav-empty
+2017-07-24 20:28:46 [readability.readability] DEBUG: Branch 34.000 .gel-head-panel--item.gel-bp-l-1/3.gel-head-panel--item-va-top>.gel-pica.text-color-white link density 0.000 -> 34.000
+2017-07-24 20:28:46 [readability.readability] DEBUG: Branch  7.000 .gel-head-panel>.gel-head-panel--item.gel-bp-l-1/3.gel-head-panel--item-va-top link density 0.000 ->  7.000
+2017-07-24 20:28:46 [readability.readability] INFO: Top 5 : 34.000 .gel-head-panel--item.gel-bp-l-1/3.gel-head-panel--item-va-top>.gel-pica.text-color-white
+2017-07-24 20:28:46 [readability.readability] INFO: Top 5 :  7.000 .gel-head-panel>.gel-head-panel--item.gel-bp-l-1/3.gel-head-panel--item-va-top
+2017-07-24 20:28:46 [readability.readability] DEBUG: Not removing div{01}>.gel-pica.text-color-white of length 162: We want everyone to enjoy the BBC. But t...
+2017-07-24 20:28:46 [readability.readability] DEBUG: Not removing body>div{01} of length 162: We want everyone to enjoy the BBC. But t...
+2017-07-24 20:28:46 [requests.packages.urllib3.connectionpool] INFO: Starting new HTTP connection (1): www.bbc.com
+2017-07-24 20:28:46 [requests.packages.urllib3.connectionpool] DEBUG: "GET /terms/ HTTP/1.1" 200 12187
+2017-07-24 20:28:56 [newspaper.images] DEBUG: ignore little https://sa.bbc.co.uk/bbc/bbc/s?name=unknown&ml_name=webmodule&ml_version=69&blq_e=orbit&blq_r=orbit&blq_s=orbit&blq_v=default&language=en&blq_js_enabled=0
+2017-07-24 20:28:58 [newspaper.images] DEBUG: ignore little http://ssc.api.bbc.com/?c1=2&c2=19293874&ns_site=bbc&name=
+2017-07-24 20:28:59 [newspaper.images] DEBUG: using max img http://ichef.bbci.co.uk/images/ic/960xn/p048hw0f.png
+2017-07-24 20:28:59 [scrapy.core.scraper] WARNING: Dropped: 
+{'author': '',
+ 'countriesMentioned': [],
+ 'newsHeadline': '\n    \n    Terms of Use - Using the BBC\n    \n',
+ 'newsText': u'We want everyone to enjoy the BBC. But there are a few rules to stick to.  Take a look through our explainers to see what you (and we) can and can\u2019t do on the BBC.',
+ 'newsUrl': 'http://www.bbc.com/terms/'}
+2017-07-24 20:28:59 [root] INFO: Parsing URL: http://www.bbc.com/privacy/
+2017-07-24 20:28:59 [requests.packages.urllib3.connectionpool] INFO: Starting new HTTP connection (1): www.bbc.com
+2017-07-24 20:29:02 [requests.packages.urllib3.connectionpool] DEBUG: "GET /privacy/ HTTP/1.1" 200 11872
+2017-07-24 20:29:02 [readability.readability] DEBUG: Removing unlikely candidate - header#orb-banner>#orb-header.orb-nav-pri.orb-nav-pri-white.orb-nav-empty
+2017-07-24 20:29:02 [readability.readability] DEBUG: Branch 37.000 .gel-head-panel--item.gel-bp-l-1/3.gel-head-panel--item-va-top>.gel-pica.text-color-white link density 0.131 -> 32.157
+2017-07-24 20:29:02 [readability.readability] DEBUG: Branch  8.500 .gel-head-panel>.gel-head-panel--item.gel-bp-l-1/3.gel-head-panel--item-va-top link density 0.113 ->  7.543
+2017-07-24 20:29:02 [readability.readability] INFO: Top 5 : 32.157 .gel-head-panel--item.gel-bp-l-1/3.gel-head-panel--item-va-top>.gel-pica.text-color-white
+2017-07-24 20:29:02 [readability.readability] INFO: Top 5 :  7.543 .gel-head-panel>.gel-head-panel--item.gel-bp-l-1/3.gel-head-panel--item-va-top
+2017-07-24 20:29:02 [readability.readability] DEBUG: Not removing div{01}>.gel-pica.text-color-white of length 191: We take your privacy very seriously. And...
+2017-07-24 20:29:02 [readability.readability] DEBUG: Not removing body>div{01} of length 191: We take your privacy very seriously. And...
+2017-07-24 20:29:02 [requests.packages.urllib3.connectionpool] INFO: Starting new HTTP connection (1): www.bbc.com
+2017-07-24 20:29:02 [requests.packages.urllib3.connectionpool] DEBUG: "GET /privacy/ HTTP/1.1" 200 11872
+2017-07-24 20:29:05 [scrapy.crawler] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2017-07-24 20:29:05 [scrapy.crawler] INFO: Received SIGINT twice, forcing unclean shutdown
+2017-07-24 20:29:05 [newspaper.images] DEBUG: ignore little https://sa.bbc.co.uk/bbc/bbc/s?name=unknown&ml_name=webmodule&ml_version=69&blq_e=orbit&blq_r=orbit&blq_s=orbit&blq_v=default&language=en&blq_js_enabled=0
+2017-07-24 20:29:07 [newspaper.images] DEBUG: ignore little http://ssc.api.bbc.com/?c1=2&c2=19293874&ns_site=bbc&name=
+2017-07-24 20:29:07 [newspaper.images] DEBUG: using max img http://ichef.bbci.co.uk/images/ic/960xn/p0492qj1.png
+2017-07-24 20:29:07 [scrapy.core.scraper] WARNING: Dropped: 
+{'author': '',
+ 'countriesMentioned': [],
+ 'newsHeadline': '\n    \n    Your Information & Privacy - Using the BBC\n    \n',
+ 'newsText': u'We take your privacy very seriously. And so should you.  So have a look around to see what we\u2019re doing with your personal information and how we\u2019re keeping it secure.  Read our privacy promise.',
+ 'newsUrl': 'http://www.bbc.com/privacy/'}
+2017-07-24 20:29:08 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET http://www.bbc.com/vietnamese> from <GET http://www.bbc.com/vietnamese/>
+2017-07-24 20:29:08 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET http://www.bbc.com/uzbek> from <GET http://www.bbc.com/uzbek/>
+2017-07-24 20:29:08 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET http://www.bbc.com/ukrainian> from <GET http://www.bbc.com/ukrainian/>
+2017-07-24 20:29:08 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET http://www.bbc.com/turkce> from <GET http://www.bbc.com/turkce/>
+2017-07-24 20:29:08 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.bbc.com/usingthebbc/cookies/> (referer: http://www.bbc.com/)
+2017-07-24 20:29:08 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET http://www.bbc.co.uk/programmes/p058w7g9> from <GET http://www.bbc.com/programmes/p058w7g9>
+2017-07-24 20:29:08 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://www.bbc.com/capital/tags/entrepreneur> (referer: http://www.bbc.com/capital/story/20170723-the-case-against-personal-brands)
+2017-07-24 20:29:08 [scrapy.core.engine] INFO: Closing spider (shutdown)
+2017-07-24 20:29:08 [scrapy.extensions.logstats] INFO: Crawled 22 pages (at 22 pages/min), scraped 5 items (at 5 items/min)
+2017-07-24 20:29:08 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET http://www.bbc.co.uk/robots.txt> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
